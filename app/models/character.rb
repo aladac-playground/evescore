@@ -33,7 +33,7 @@ class Character
     { 'Content-Type' => 'application/json', 'Authorization' => authorization_header }
   end
 
-  def token_refresh_body
+  def refresh_token_body
     { grant_type: 'refresh_token', refresh_token: refresh_token }
   end
 

@@ -7,9 +7,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'capistrano-rails', group: :development
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'devise-bootstrapped'
 gem 'mongoid'
 gem 'omniauth-crest'
 gem 'puma', '~> 3.7'

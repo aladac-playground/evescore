@@ -21,6 +21,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'simplecov', require: false, group: :test
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'vcr', group: :test
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

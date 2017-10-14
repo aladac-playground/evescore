@@ -24,8 +24,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'vcr', group: :test
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'capybara', '~> 2.13'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end

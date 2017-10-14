@@ -8,7 +8,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'capistrano-rails', group: :development
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'devise-bootstrapped'
@@ -18,22 +17,28 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'ruby-esi'
 gem 'sass-rails', '~> 5.0'
-gem 'simplecov', require: false, group: :test
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'vcr', group: :test
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'webmock'
+end
 
 group :development, :test do
   gem 'awesome_print'
   gem 'capybara', '~> 2.13'
+  gem 'launchy'
+  gem 'poltergeist'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
 end
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'capistrano-rails'
   gem 'rubocop'
   gem 'spring'
 end

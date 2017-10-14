@@ -7,6 +7,18 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'capybara/poltergeist'
+require 'vcr'
+require 'webmock/rspec'
+
+Capybara.javascript_driver = :poltergeist
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/acceptance/cassettes'
+  c.hook_into :webmock
+  c.ignore_localhost = true
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -23,8 +35,9 @@ require 'rspec/rails'
 # require only the support files necessary.
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-
 RSpec.configure do |config|
+  config.include Warden::Test::Helpers
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -44,4 +57,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+def save_and_open_page_with_css
+  save_page Rails.root.join('public', 'capybara.html')
+  `launchy http://localhost:3000/capybara.html`
 end

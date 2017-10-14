@@ -1,2 +1,16 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Portrait</th>
+      <th>Name</th>
+      <th>CorporationID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @characters.each do |character| %>
+      <%= render partial: 'character', object: character %>
+    <% end %>
+  </tbody>
+</table>

@@ -34,7 +34,7 @@ class Character
   end
 
   def refresh_token_body
-    { grant_type: 'refresh_token', refresh_token: refresh_token }
+    { grant_type: 'refresh_token', refresh_token: refresh_token }.to_json
   end
 
   def current_access_token

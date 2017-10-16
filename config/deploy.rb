@@ -1,14 +1,16 @@
-# config valid only for current version of Capistrano
-lock "3.9.1"
+# frozen_string_literal: true
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+# config valid only for current version of Capistrano
+lock '3.9.1'
+
+set :application, 'evescore'
+set :repo_url, 'git@github.com:aladac/evescore.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, '/home/rails/evescore'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -34,3 +36,13 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+namespace :deploy do
+  task :restart do
+    on roles(:all) do
+      execute :passenger, 'stop'
+      execute :passenger, 'start'
+    end
+  end
+  after 'deploy:publishing', 'deploy:restart'
+end

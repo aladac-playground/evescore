@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+
+var ready;
+ready = function() {
+  $('[data-toggle="tooltip"]').tooltip({ html: true })
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -1,65 +1,71 @@
-<table class="table table-striped">
-  <caption>Earnings - Last 10 Days</caption>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th class="numeric">Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bounty_by_day.each do |record| %>
-      <tr>
-        <td><%= record.date %></td>
-        <td><%= isk_image %></td>
-        <td class="numeric"><%= number_to_isk record.amount %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-sm-4">
+    <table class="table table-striped">
+      <caption>Earnings - Last 5 Days</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Date</th>
+          <th class="numeric">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bounty_by_day.each do |record| %>
+          <tr>
+            <td><%= isk_image %></td>
+            <td><%= record.date %></td>
+            <td class="numeric"><%= number_to_isk record.amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-4">
+    <table class="table table-striped">
+      <caption>Top 5 Ticks</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Timestamp</th>
+          <th class="numeric">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @top_ticks.each do |record| %>
+          <tr>
+            <td><%= record_icon(record) %></td>
+            <td><%= record.ts %></td>
+            <td class="numeric"><%= number_to_isk record.amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-4">
+    <table class="table table-striped">
+      <caption>Top 5 Rats Bounty</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Rat Name</th>
+          <th class="numeric">Bounty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @valuable_rats.each do |record| %>
+          <tr>
+            <td><%= kill_image(record) %></td>
+            <td><%= record.rat.name %></td>
+            <td class="numeric"><%= number_to_isk_short record.rat.bounty %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <table class="table table-striped">
-  <caption>Top 10 Ticks</caption>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th class="numeric">Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @top_ticks.each do |record| %>
-      <tr>
-        <td><%= record.date %></td>
-        <td><%= isk_image %></td>
-        <td class="numeric"><%= number_to_isk record.amount %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table class="table table-striped">
-  <caption>Top 10 Ticks</caption>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th class="numeric">Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @valuable_rats.each do |record| %>
-      <tr>
-        <td><%= record.ts %></td>
-        <td><%= isk_image %></td>
-        <td class="numeric"><%= number_to_isk record.bounty %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table class="table table-striped">
-  <caption>Last 10 Ticks</caption>
+  <caption>Last 5 Ticks</caption>
   <thead>
     <tr>
       <th class="icon"></th>

@@ -5,6 +5,7 @@ lock '3.9.1'
 
 set :application, 'evescore'
 set :repo_url, 'git@github.com:aladac/evescore.git'
+set :passenger_in_gemfile, true
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

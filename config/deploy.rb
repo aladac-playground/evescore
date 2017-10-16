@@ -36,13 +36,3 @@ set :deploy_to, '/home/rails/evescore'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
-namespace :deploy do
-  task :restart do
-    on roles(:all) do
-      execute :passenger, 'stop'
-      execute :passenger, 'start'
-    end
-  end
-  after 'deploy:publishing', 'deploy:restart'
-end

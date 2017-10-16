@@ -12,11 +12,15 @@ module ApplicationHelper
 
   def kill_image(kill)
     title = "<strong>#{kill.rat.name}</strong><br>#{kill.amount} kills"
-    type_image(kill.rat_id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
+    type_image(kill.rat.id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
   end
 
   def number_to_isk(amount)
     number_to_currency amount, format: '%n %u', precision: 0, unit: 'ISK'
+  end
+
+  def number_to_isk_short(amount)
+    number_to_human amount, units: { thousand: 'K ISK', million: 'M ISK' }, format: '%n%u'
   end
 
   def isk_image

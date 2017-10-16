@@ -1,14 +1,31 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  def flash_to_alert(flash)
+    flash[0] = 'warning' if flash[0].blank?
+    case flash[0]
+    when 'notice'
+      html_class = 'info'
+    when 'error'
+      html_class = 'danger'
+    when 'warn'
+      html_class = 'warning'
+    end
+    content_tag(:div, close_button('alert') + flash[1], class: "alert alert-dismissible alert-#{html_class}")
+  end
+
+  def close_button(type)
+    "<button type=\"button\" class=\"close\" data-dismiss=\"#{type}\">×</button>".html_safe
+  end
+
   def icon(name)
-    content_tag(:span, "", class: "glyphicon glyphicon-#{name}")
+    content_tag(:span, '', class: "glyphicon glyphicon-#{name}")
   end
-  
+
   def login_with_eve
-    link_to image_tag('https://images.contentful.com/idjq7aai9ylm/12vrPsIMBQi28QwCGOAqGk/33234da7672c6b0cdca394fc8e0b1c2b/EVE_SSO_Login_Buttons_Small_Black.png?w=195&h=30'), user_crest_omniauth_authorize_path
+    link_to image_tag('EVE_SSO_Login_Buttons_Small_Black'), user_crest_omniauth_authorize_path
   end
-  
+
   def character_image(character_id, size = 64)
     image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", class: 'img-rounded'
   end
@@ -36,7 +53,7 @@ module ApplicationHelper
   end
 
   def corporation_image(corporation_id, size = 32)
-    image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png")
+    image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", class: 'img img-rounded')
   end
 
   def record_icon(record)

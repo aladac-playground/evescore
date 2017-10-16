@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
-  before_action :set_character, only: :character_profile
+  before_action :set_character, only: %i[character_profile destroy]
 
   def index
     @characters = current_user.characters || []
@@ -12,6 +12,11 @@ class WelcomeController < ApplicationController
     @bounty_by_day = @character.bounty_by_day[0..4]
     @valuable_rats = @character.kills_by_bounty[0..4]
     @top_ticks = @character.wallet_records.order('amount desc').limit(5)
+  end
+
+  def destroy
+    @character.destroy
+    redirect_to root_path, notice: 'Character removed'
   end
 
   protected

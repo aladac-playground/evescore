@@ -14,7 +14,7 @@ gem 'devise-bootstrapped'
 gem 'jquery-rails'
 gem 'mongoid'
 gem 'omniauth-crest'
-gem 'passenger', group: :production
+gem 'passenger'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'ruby-esi'

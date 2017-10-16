@@ -154,4 +154,13 @@ test:
       options:
         read:
           mode: :primary
-        max_pool_size: 1
+          
+production:
+  clients:
+    default:
+      database: evescore
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary

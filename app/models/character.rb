@@ -3,13 +3,19 @@
 class Character
   include Mongoid::Document
   field :name, type: String
-  field :corporation_id, type: Integer
   field :access_token, type: String
   field :refresh_token, type: String
   field :token_expires, type: Time
+  belongs_to :corporation, optional: true
   belongs_to :user
   has_many :wallet_records
   has_many :kills
+
+  after_save :create_corporation
+
+  def create_corporation
+    Corporation.create_from_api(corporation_id)
+  end
 
   def update_tokens(credentials)
     self.access_token = credentials['token']

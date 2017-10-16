@@ -16,10 +16,6 @@
 //= require bootstrap
 //= require_tree .
 
-var ready;
-ready = function() {
+$(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip({ html: true })
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
+})

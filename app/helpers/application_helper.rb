@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  def icon(name)
+    content_tag(:span, "", class: "glyphicon glyphicon-#{name}")
+  end
+  
+  def login_with_eve
+    link_to image_tag('https://images.contentful.com/idjq7aai9ylm/12vrPsIMBQi28QwCGOAqGk/33234da7672c6b0cdca394fc8e0b1c2b/EVE_SSO_Login_Buttons_Small_Black.png?w=195&h=30'), user_crest_omniauth_authorize_path
+  end
+  
   def character_image(character_id, size = 64)
     image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", class: 'img-rounded'
   end

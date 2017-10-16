@@ -13,7 +13,7 @@ set :passenger_in_gemfile, true
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/rails/evescore'
 
-set :passenger_restart_command, -> { "bundle exec passenger stop #{deploy_to}; bundle exec passenger start -d #{deploy_to}" }
+set :passenger_restart_command, -> { "bundle exec passenger stop #{current_path}; bundle exec passenger start -d #{current_path}" }
 set :passenger_restart_options, -> { "" }
 
 # Default value for :format is :airbrussh.

@@ -21,7 +21,7 @@ class Kill
                            { '$match' => { 'character_id' => character_id } },
                            { '$group' => {
                              '_id' => { rat_id: '$rat_id', bounty: '$bounty' },
-                             'kills' => { '$sum' => '$amount' }
+                             'amount' => { '$sum' => '$amount' }
                            } },
                            { '$sort' => { '_id.bounty' => -1 } }
                          ])

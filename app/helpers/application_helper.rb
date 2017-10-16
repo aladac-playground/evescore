@@ -23,7 +23,7 @@ module ApplicationHelper
   end
 
   def login_with_eve
-    link_to image_tag('EVE_SSO_Login_Buttons_Small_Black'), user_crest_omniauth_authorize_path
+    link_to image_tag('EVE_SSO_Login_Buttons_Small_Black.png'), user_crest_omniauth_authorize_path
   end
 
   def character_image(character_id, size = 64)

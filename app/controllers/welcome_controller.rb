@@ -8,10 +8,10 @@ class WelcomeController < ApplicationController
   end
 
   def character_profile
-    @ticks = @character.wallet_records.order('ts desc').limit(10)
-    @bounty_by_day = @character.bounty_by_day[0..9]
-    @valuable_rats = @character.kills.order('bounty desc').limit(10)
-    @top_ticks = @character.wallet_records.order('amount desc').limit(10)
+    @ticks = @character.wallet_records.order('ts desc').limit(5)
+    @bounty_by_day = @character.bounty_by_day[0..4]
+    @valuable_rats = @character.kills_by_bounty[0..4]
+    @top_ticks = @character.wallet_records.order('amount desc').limit(5)
   end
 
   protected

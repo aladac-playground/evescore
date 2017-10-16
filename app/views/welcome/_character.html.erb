@@ -1,5 +1,11 @@
 <tr>
-  <td><%= character_image character.id %></td>
-  <td><%= character.name %></td>
-  <td><%= character.corporation_id %></td>
+  <td>
+    <%= link_to character_image(character.id), character_profile_path(character.id) %>
+    <%= corporation_image(character.corporation_id, 64) %>
+  </td>
+  <td><%= link_to character.name, character_profile_path(character.id) %></td>
+  <td><%= character.corporation.name %></td>
+  <td>
+    <%= link_to 'Delete', character_destroy_path(character.id), method: :delete, class: 'btn btn-danger pull-right' %>
+  </td>
 </tr>

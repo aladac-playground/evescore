@@ -8,6 +8,8 @@ class Character
   field :refresh_token, type: String
   field :token_expires, type: Time
   belongs_to :user
+  has_many :wallet_records
+  has_many :kills
 
   def update_tokens(credentials)
     self.access_token = credentials['token']
@@ -62,5 +64,17 @@ class Character
 
   def wallet_journal
     wallet_api.get_characters_character_id_wallet_journal(id)
+  end
+
+  def import_wallet
+    wallet_journal.select { |r| WalletRecord.importable?(r.ref_type) }.each do |wallet_record|
+      WalletRecord.create_from_api(id, wallet_record)
+    end
+  end
+  
+  def bounty_by_day
+    WalletRecord.bounty_by_day(id).map { |b|
+      OpenStruct.new(date: b['_id'].to_date, amount: b['amount'])
+    }
   end
 end

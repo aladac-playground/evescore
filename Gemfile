@@ -11,16 +11,16 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'devise-bootstrapped'
+gem 'jquery-rails'
 gem 'mongoid'
 gem 'omniauth-crest'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'ruby-esi'
 gem 'sass-rails', '~> 5.0'
+gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'tqdm'
 
 group :test do
   gem 'simplecov', require: false

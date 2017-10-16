@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Agent
   include Mongoid::Document
   field :name, type: String

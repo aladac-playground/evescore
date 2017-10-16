@@ -71,10 +71,10 @@ class Character
       WalletRecord.create_from_api(id, wallet_record)
     end
   end
-  
+
   def bounty_by_day
-    WalletRecord.bounty_by_day(id).map { |b|
+    WalletRecord.bounty_by_day(id).map do |b|
       OpenStruct.new(date: b['_id'].to_date, amount: b['amount'])
-    }
+    end
   end
 end

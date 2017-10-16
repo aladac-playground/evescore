@@ -33,12 +33,12 @@ class Rat
       break
     end
   end
-  
+
   def rat_attributes
-    types_api.dogma_attributes.map { |attribute|
+    types_api.dogma_attributes.map do |attribute|
       {
         ESI::DogmaApi.new.get_dogma_attributes_attribute_id(attribute.attribute_id).description => attribute.value
       }
-    }
+    end
   end
 end

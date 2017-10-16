@@ -13,17 +13,17 @@ class Kill
 
   def create_rat
     rat = Rat.where(id: rat_id).first_or_create
-    self.update_attributes(bounty: rat.bounty) if self.bounty.nil?
+    update_attributes(bounty: rat.bounty) if bounty.nil?
   end
-  
+
   def self.kills_by_bounty(character_id)
-    self.collection.aggregate([
-                                      { '$match' => { 'character_id' => character_id } },
-                                      { '$group' => {
-                                        '_id' => { rat_id: '$rat_id', bounty: '$bounty' },
-                                        'kills' => { '$sum' => '$amount' }
-                                      } },
-                                      { '$sort' => { '_id.bounty' => -1 } }
-                                    ])
+    collection.aggregate([
+                           { '$match' => { 'character_id' => character_id } },
+                           { '$group' => {
+                             '_id' => { rat_id: '$rat_id', bounty: '$bounty' },
+                             'kills' => { '$sum' => '$amount' }
+                           } },
+                           { '$sort' => { '_id.bounty' => -1 } }
+                         ])
   end
 end

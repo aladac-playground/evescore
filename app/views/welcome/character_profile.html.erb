@@ -1,0 +1,87 @@
+<table class="table table-striped">
+  <caption>Earnings - Last 10 Days</caption>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th class="numeric">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bounty_by_day.each do |record| %>
+      <tr>
+        <td><%= record.date %></td>
+        <td><%= isk_image %></td>
+        <td class="numeric"><%= number_to_isk record.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <caption>Top 10 Ticks</caption>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th class="numeric">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @top_ticks.each do |record| %>
+      <tr>
+        <td><%= record.date %></td>
+        <td><%= isk_image %></td>
+        <td class="numeric"><%= number_to_isk record.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <caption>Top 10 Ticks</caption>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th class="numeric">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @valuable_rats.each do |record| %>
+      <tr>
+        <td><%= record.ts %></td>
+        <td><%= isk_image %></td>
+        <td class="numeric"><%= number_to_isk record.bounty %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <caption>Last 10 Ticks</caption>
+  <thead>
+    <tr>
+      <th class="icon"></th>
+      <th>Timestamp</th>
+      <th>Details</th>
+      <th></th>
+      <th class="numeric">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ticks.each do |record| %>
+      <tr>
+        <td><%= record_icon(record) %></td>
+        <td><%= record.ts %></td>
+        <td><%= record_details(record) %></td>
+        <td>
+          <% record.kills.each do |kill| %>
+            <%= kill_image(kill) %>
+          <% end %>
+        </td>
+        <td class="numeric"><%= number_to_isk record.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -77,4 +77,11 @@ class Character
       OpenStruct.new(date: b['_id'].to_date, amount: b['amount'])
     end
   end
+
+  def kills_by_bounty
+    Kill.kills_by_bounty(id).map do |k|
+      OpenStruct.new(rat: Rat.find(k['_id']['rat_id']),
+                     amount: k['amount'])
+    end
+  end
 end

@@ -49,13 +49,13 @@ class User
     character = characters.where(id: character_id, name: api_character.name, corporation_id: api_character.corporation_id).first_or_create
     character.update_tokens(credentials)
   end
-  
+
   def earnings_by_day
     WalletRecord.user_earnings_by_day(id).map do |b|
       OpenStruct.new(date: b['_id'].to_date, amount: b['amount'])
     end
   end
-  
+
   def kills_by_bounty
     Kill.user_kills_by_bounty(id).map do |k|
       OpenStruct.new(rat: Rat.find(k['_id']['rat_id']),
@@ -64,7 +64,7 @@ class User
   rescue Mongoid::Errors::DocumentNotFound
     []
   end
-  
+
   def kills_by_faction
     Kill.user_kills_by_faction(id).map do |k|
       OpenStruct.new(faction: Faction.find(k['_id']), amount: k['amount']) if k['_id']

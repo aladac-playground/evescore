@@ -89,12 +89,16 @@ class Character
       OpenStruct.new(rat: Rat.find(k['_id']['rat_id']),
                      amount: k['amount'])
     end
+  rescue Mongoid::Errors::DocumentNotFound
+    []
   end
 
   def kills_by_faction
     Kill.kills_by_faction(id).map do |k|
       OpenStruct.new(faction: Faction.find(k['_id']), amount: k['amount']) if k['_id']
     end.compact
+  rescue Mongoid::Errors::DocumentNotFound
+    []
   end
 
   def average_tick

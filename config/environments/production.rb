@@ -84,4 +84,5 @@ Rails.application.configure do
   end
   config.action_mailer.default_url_options = { host: ENV['EVESCORE_HOST'] }
   config.action_mailer.default_options = { from: ENV['EVESCORE_EMAIL'] }
+  Mongoid.logger.level = Logger::INFO
 end

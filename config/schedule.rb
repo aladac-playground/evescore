@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
@@ -5,7 +7,7 @@
 
 # Example:
 #
-set :output, "/home/rails/evescore/cron.log"
+set :output, '/home/rails/evescore/cron.log'
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -19,5 +21,5 @@ set :output, "/home/rails/evescore/cron.log"
 
 # Learn more: http://github.com/javan/whenever
 every 1.hour do
-  rake "import_wallet"
+  rake 'import_wallet'
 end

@@ -1,7 +1,12 @@
 .navbar-brand > img {
   margin-top: -11px;
   margin-left: -11px;
-} 
+}
+
+.navbar-brand > a > img.portrait {
+  margin-top: -7px;
+  margin-left: -11px;
+}
 
 body {
   background: #000 image-url("fp-bg2") no-repeat 50% 0;

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
-  before_action :set_character, only: %i[character_profile destroy earnings]
+  before_action :set_character, except: %i[index]
+
+  DEFAULT_PER_PAGE = 10
 
   def index
     @characters = current_user.characters || []
@@ -15,7 +17,19 @@ class WelcomeController < ApplicationController
   end
 
   def earnings
-    @earnings_by_day = Kaminari.paginate_array(@character.earnings_by_day).page(params[:page]).per(10)
+    @earnings_by_day = Kaminari.paginate_array(@character.earnings_by_day).page(params[:page]).per(DEFAULT_PER_PAGE)
+  end
+
+  def ticks
+    @top_ticks = @character.wallet_records.order('amount desc').page(params[:page]).per(DEFAULT_PER_PAGE)
+  end
+
+  def rats
+    @valuable_rats = Kaminari.paginate_array(@character.kills_by_bounty).page(params[:page]).per(DEFAULT_PER_PAGE)
+  end
+
+  def journal
+    @ticks = @character.wallet_records.order('ts desc').page(params[:page]).per(DEFAULT_PER_PAGE)
   end
 
   def destroy

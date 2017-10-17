@@ -21,7 +21,8 @@
 <div class="row">
   <div class="col-sm-4">
     <table class="table table-striped">
-      <caption>Earnings - Last 5 Days
+      <caption>
+        Earnings - Last 5 Days
         <span class="pull-right"><%= link_to 'More', character_earnings_path(@character) %></span>
       </caption>
       <thead>
@@ -44,7 +45,10 @@
   </div>
   <div class="col-sm-4">
     <table class="table table-striped">
-      <caption>Top 5 Ticks</caption>
+      <caption>
+        Top 5 Ticks
+        <span class="pull-right"><%= link_to 'More', character_ticks_path(@character) %></span>
+      </caption>
       <thead>
         <tr>
           <th></th>
@@ -65,7 +69,10 @@
   </div>
   <div class="col-sm-4">
     <table class="table table-striped">
-      <caption>Top 5 Rats Bounty</caption>
+      <caption>
+        Top 5 Rats Bounty
+        <span class="pull-right"><%= link_to 'More', character_rats_path(@character) %></span>
+      </caption>
       <thead>
         <tr>
           <th></th>
@@ -87,7 +94,10 @@
 </div>
 
 <table class="table table-striped">
-  <caption>Last 5 Ticks</caption>
+  <caption>
+    Last 5 Ticks
+    <span class="pull-right"><%= link_to 'More', character_journal_path(@character) %></span>
+  </caption>
   <thead>
     <tr>
       <th class="icon"></th>

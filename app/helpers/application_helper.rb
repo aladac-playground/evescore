@@ -25,8 +25,14 @@ module ApplicationHelper
     link_to image_tag('EVE_SSO_Login_Buttons_Small_Black.png'), user_crest_omniauth_authorize_path
   end
 
-  def character_image(character_id, size = 64)
-    image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", class: 'img-rounded'
+  def navbar_portrait(character)
+    title = character.name
+    character_image(character.id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
+  end
+
+  def character_image(character_id, size = 64, options = {})
+    options['class'] = 'img-rounded portrait'
+    image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", options
   end
 
   def type_image(type_id, size = 32, options = {})

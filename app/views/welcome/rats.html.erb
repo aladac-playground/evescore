@@ -1,0 +1,32 @@
+<table class="table table-striped">
+  <caption>Top Rats Bounty</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Rat Name</th>
+      <th>Group</th>
+      <th class="numeric">Kills</th>
+      <th colspan="2" class="numeric">Bounty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @valuable_rats.each do |record| %>
+      <tr>
+        <td><%= kill_image(record) %></td>
+        <td><%= record.rat.name %></td>
+        <td><%= record.rat.group %></td>
+        <td class="numeric">
+          <%= number_with_delimiter record.amount %>
+        </td>
+        <td class="numeric">
+          <%= number_to_isk record.rat.bounty %>
+        </td>
+        <td class="numeric">
+          ( <%= number_to_isk_short record.rat.bounty %> )
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @valuable_rats %>

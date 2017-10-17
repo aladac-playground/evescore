@@ -10,6 +10,11 @@
       <a class="navbar-brand" href="/">
         <%= image_tag 'evescore.png' %>
       </a>
+      <div class="nav navbar-brand">
+        <% current_user.characters.each do |character| %>
+          <%= link_to navbar_portrait(character), character_profile_path(character) %>
+        <% end %>
+      </div>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li>

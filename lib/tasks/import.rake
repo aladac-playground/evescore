@@ -12,21 +12,21 @@ end
 
 def create_agents
   agents = YAML.load_file('data/agents.yml')
-  agents.tqdm(leave: true, desc: 'Importing Mission Agents').each { |agent|
+  agents.tqdm(leave: true, desc: 'Importing Mission Agents').each do |agent|
     Agent.create(agent)
-  }
+  end
 end
 
 def create_corps
   corps = YAML.load_file('data/corporations.yml')
-  corps.tqdm(leave: true, desc: 'Importing NPC Corporations').each { |corp|
+  corps.tqdm(leave: true, desc: 'Importing NPC Corporations').each do |corp|
     Corporation.create(corp)
-  }
+  end
 end
 
 def create_factions
   factions = YAML.load_file('data/factions.yml')
-  factions.tqdm(leave: true, desc: 'Importing Factions').each { |faction|
+  factions.tqdm(leave: true, desc: 'Importing Factions').each do |faction|
     Faction.create(faction)
-  }
+  end
 end

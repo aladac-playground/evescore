@@ -32,7 +32,7 @@ class WalletRecord
     record.save
   end
 
-  def self.bounty_by_day(character_id)
+  def self.earnings_by_day(character_id)
     collection.aggregate([
                            { '$match' => { 'character_id' => character_id } },
                            { '$group' => {

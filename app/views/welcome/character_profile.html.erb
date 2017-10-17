@@ -21,7 +21,9 @@
 <div class="row">
   <div class="col-sm-4">
     <table class="table table-striped">
-      <caption>Earnings - Last 5 Days</caption>
+      <caption>Earnings - Last 5 Days
+        <span class="pull-right"><%= link_to 'More', character_earnings_path(@character) %></span>
+      </caption>
       <thead>
         <tr>
           <th></th>
@@ -30,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @bounty_by_day.each do |record| %>
+        <% @earnings_by_day.each do |record| %>
           <tr>
             <td><%= isk_image %></td>
             <td><%= record.date %></td>

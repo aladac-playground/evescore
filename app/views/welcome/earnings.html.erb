@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <caption>Earnings</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th class="numeric">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @earnings_by_day.each do |record| %>
+      <tr>
+        <td><%= isk_image %></td>
+        <td><%= record.date %></td>
+        <td class="numeric"><%= number_to_isk record.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @earnings_by_day %>

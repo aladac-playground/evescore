@@ -34,8 +34,8 @@ class Character
     end
   end
 
-  def bounty_by_day
-    WalletRecord.bounty_by_day(id).map do |b|
+  def earnings_by_day
+    WalletRecord.earnings_by_day(id).map do |b|
       OpenStruct.new(date: b['_id'].to_date, amount: b['amount'])
     end
   end

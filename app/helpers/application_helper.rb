@@ -2,11 +2,10 @@
 
 module ApplicationHelper
   def flash_to_alert(flash)
-    flash[0] = 'warning' if flash[0].blank?
     case flash[0]
     when 'notice'
       html_class = 'info'
-    when 'error'
+    when 'error', 'alert'
       html_class = 'danger'
     when 'warn'
       html_class = 'warning'

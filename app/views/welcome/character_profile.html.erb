@@ -1,3 +1,23 @@
+<table class="table table-striped">
+  <tr>
+    <td rowspan="2" style="width: 148px">
+      <%= character_image(@character.id) %>
+      <%= corporation_image(@character.corporation_id, 64) %>
+    </td>
+    <td><%= @character.name %></td>
+    <th class="numeric">Total ISK Earned</th>
+    <th class="numeric">Total Rat Kills</th>
+    <th class="numeric">Average Tick</th>
+    <th class="numeric">Favourite Faction</th>
+  </tr>
+  <tr>
+    <td><%= @character.corporation.name %></td>
+    <td class="numeric"><%= number_to_isk_short @character.total_isk %></td>
+    <td class="numeric"><%= number_with_delimiter @character.total_kills %></td>
+    <td class="numeric"><%= number_to_isk_short @character.average_tick %></td>
+    <td class="numeric"><%= corporation_image @character.favourite_faction.corporation_id %> <%= @character.favourite_faction.name %></td>
+  </tr>
+</table>
 <div class="row">
   <div class="col-sm-4">
     <table class="table table-striped">

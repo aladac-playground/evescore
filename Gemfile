@@ -14,6 +14,7 @@ gem 'delayed_job_mongoid'
 gem 'devise'
 gem 'devise-bootstrapped'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'mongoid'
 gem 'omniauth-crest'
 gem 'passenger'
@@ -25,7 +26,6 @@ gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
-gem 'kaminari'
 
 group :test do
   gem 'simplecov', require: false

@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
     @valuable_rats = @character.kills_by_bounty[0..4]
     @top_ticks = @character.wallet_records.order('amount desc').limit(5)
   end
-  
+
   def earnings
     @earnings_by_day = Kaminari.paginate_array(@character.earnings_by_day).page(params[:page]).per(10)
   end

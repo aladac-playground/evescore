@@ -14,7 +14,7 @@ set :passenger_in_gemfile, true
 set :deploy_to, '/home/rails/evescore'
 
 set :passenger_restart_command, -> { "bundle exec passenger stop --pid-file #{current_path}/tmp/passenger.pid #{current_path}; bundle exec passenger start" }
-set :passenger_restart_options, -> { "--pid-file #{current_path}/tmp/passenger.pid" }
+set :passenger_restart_options, -> { "--pid-file #{current_path}/tmp/passenger.pid -d -e production #{current_path}" }
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

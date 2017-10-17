@@ -30,7 +30,7 @@ class Character
 
   def import_wallet
     wallet_journal.select { |r| WalletRecord.importable?(r.ref_type) }.each do |wallet_record|
-      WalletRecord.create_from_api(id, wallet_record)
+      WalletRecord.create_from_api(self, wallet_record)
     end
   end
 

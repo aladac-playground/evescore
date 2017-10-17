@@ -90,4 +90,30 @@ class Character
                      amount: k['amount'])
     end
   end
+
+  def kills_by_faction
+    Kill.kills_by_faction(id).map do |k|
+      OpenStruct.new(faction: Faction.find(k['_id']), amount: k['amount']) if k['_id']
+    end.compact
+  end
+
+  def average_tick
+    wallet_records.sum(:amount) / wallet_records.count
+  rescue ZeroDivisionError
+    0
+  end
+
+  def total_isk
+    wallet_records.sum(:amount)
+  end
+
+  def total_kills
+    kills.sum(:amount)
+  end
+
+  def favourite_faction
+    kills_by_faction.first.faction
+  rescue NoMethodError
+    OpenStruct.new
+  end
 end

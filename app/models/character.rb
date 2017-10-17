@@ -2,6 +2,7 @@
 
 class Character
   include Mongoid::Document
+  include GlobalID::Identification
   field :name, type: String
   field :access_token, type: String
   field :refresh_token, type: String
@@ -12,6 +13,11 @@ class Character
   has_many :kills
 
   after_save :create_corporation
+  after_create :queue_initial_import
+  
+  def queue_initial_import
+    CharacterWalletImportJob.perform_later(self)
+  end
 
   def create_corporation
     Corporation.create_from_api(corporation_id)

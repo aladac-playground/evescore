@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
 class String
-  def is_number?
-    true if Float(self) rescue false
+  def number?
+    true if Float(self)
+  rescue ArgumentError
+    false
   end
-  
-  def is_i?
-     /\A[-+]?\d+\z/ === self
+
+  def i?
+    /\A[-+]?\d+\z/ =~ self
   end
 end

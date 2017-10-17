@@ -9,6 +9,7 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails', '~> 4.2'
+gem 'delayed_job_mongoid'
 gem 'devise'
 gem 'devise-bootstrapped'
 gem 'jquery-rails'
@@ -23,7 +24,6 @@ gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
-gem 'delayed_job_mongoid'
 
 group :test do
   gem 'simplecov', require: false
@@ -43,9 +43,9 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano3-delayed-job'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
+  gem 'capistrano3-delayed-job'
   gem 'letter_opener'
   gem 'rubocop'
   gem 'spring'

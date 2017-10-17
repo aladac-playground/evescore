@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CharacterWalletImportJob < ApplicationJob
   queue_as :default
 

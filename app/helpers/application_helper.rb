@@ -68,7 +68,7 @@ module ApplicationHelper
   def record_details(record)
     case record.type
     when 'bounty_prizes'
-      content_tag(:span, 'Bounty', class: 'label label-default')
+      content_tag(:span, 'Bounty', class: 'label label-primary')
     when 'agent_mission_reward'
       content_tag(:span, "#{record.agent.division} Mission Level #{record.agent.level} Reward", class: 'label label-primary')
     end

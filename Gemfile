@@ -9,6 +9,7 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails', '~> 4.2'
+gem 'daemons'
 gem 'delayed_job_mongoid'
 gem 'devise'
 gem 'devise-bootstrapped'

@@ -41,8 +41,9 @@ module ApplicationHelper
   end
 
   def kill_image(kill)
-    title = "<strong>#{kill.rat.name}</strong><br>#{kill.amount} kills"
-    type_image(kill.rat.id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
+    kill = OpenStruct.new(kill) if kill.class == BSON::Document
+    title = "<strong>#{kill.name}</strong><br>#{kill.amount} kills"
+    type_image(kill.rat_id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
   rescue ActionView::Template::Error
     ''
   end

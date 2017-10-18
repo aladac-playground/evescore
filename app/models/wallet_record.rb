@@ -33,28 +33,6 @@ class WalletRecord
     record.save
   end
 
-  def self.earnings_by_day(character_id)
-    collection.aggregate([
-                           { '$match' => { 'character_id' => character_id } },
-                           { '$group' => {
-                             '_id' => '$date',
-                             'amount' => { '$sum' => '$amount' }
-                           } },
-                           { '$sort' => { '_id' => -1 } }
-                         ])
-  end
-
-  def self.user_earnings_by_day(user_id)
-    collection.aggregate([
-                           { '$match' => { 'user_id' => user_id } },
-                           { '$group' => {
-                             '_id' => '$date',
-                             'amount' => { '$sum' => '$amount' }
-                           } },
-                           { '$sort' => { '_id' => -1 } }
-                         ])
-  end
-
   def parse_rats(text)
     text.split(',').map { |a| a.split(":\s") }
   end

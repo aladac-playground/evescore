@@ -15,7 +15,7 @@
     <td class="numeric"><%= number_to_isk_short @character.total_isk %></td>
     <td class="numeric"><%= number_with_delimiter @character.total_kills %></td>
     <td class="numeric"><%= number_to_isk_short @character.average_tick %></td>
-    <td class="numeric"><%= corporation_image @character.favourite_faction.corporation_id %> <%= @character.favourite_faction.name %></td>
+    <td class="numeric"><%= corporation_image @character.favourite_faction['corporation_id'] %> <%= @character.favourite_faction['name'] %></td>
   </tr>
 </table>
 <div class="row">
@@ -36,8 +36,8 @@
         <% @earnings_by_day.each do |record| %>
           <tr>
             <td><%= isk_image %></td>
-            <td><%= record.date %></td>
-            <td class="numeric"><%= number_to_isk record.amount %></td>
+            <td><%= record['date'] %></td>
+            <td class="numeric"><%= number_to_isk record['amount'] %></td>
           </tr>
         <% end %>
       </tbody>
@@ -84,8 +84,8 @@
         <% @valuable_rats.each do |record| %>
           <tr>
             <td><%= kill_image(record) %></td>
-            <td><%= record.rat.name %></td>
-            <td class="numeric"><%= number_to_isk_short record.rat.bounty %></td>
+            <td><%= record['name'] %></td>
+            <td class="numeric"><%= number_to_isk_short record['bounty'] %></td>
           </tr>
         <% end %>
       </tbody>

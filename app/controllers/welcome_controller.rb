@@ -11,13 +11,13 @@ class WelcomeController < ApplicationController
 
   def character_profile
     @ticks = @character.wallet_records.order('ts desc').limit(5)
-    @earnings_by_day = @character.earnings_by_day[0..4]
-    @valuable_rats = @character.kills_by_bounty[0..4]
+    @earnings_by_day = @character.earnings_by_day(5)
+    @valuable_rats = @character.kills_by_bounty(5)
     @top_ticks = @character.wallet_records.order('amount desc').limit(5)
   end
 
   def earnings
-    @earnings_by_day = Kaminari.paginate_array(@character.earnings_by_day).page(params[:page]).per(DEFAULT_PER_PAGE)
+    @earnings_by_day = Kaminari.paginate_array(@character.earnings_by_day.to_a).page(params[:page]).per(DEFAULT_PER_PAGE)
   end
 
   def ticks
@@ -25,7 +25,7 @@ class WelcomeController < ApplicationController
   end
 
   def rats
-    @valuable_rats = Kaminari.paginate_array(@character.kills_by_bounty).page(params[:page]).per(DEFAULT_PER_PAGE)
+    @valuable_rats = Kaminari.paginate_array(@character.kills_by_bounty.to_a).page(params[:page]).per(DEFAULT_PER_PAGE)
   end
 
   def journal

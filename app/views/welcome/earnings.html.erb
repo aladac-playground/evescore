@@ -11,8 +11,8 @@
     <% @earnings_by_day.each do |record| %>
       <tr>
         <td><%= isk_image %></td>
-        <td><%= record.date %></td>
-        <td class="numeric"><%= number_to_isk record.amount %></td>
+        <td><%= record['date'] %></td>
+        <td class="numeric"><%= number_to_isk record['amount'] %></td>
       </tr>
     <% end %>
   </tbody>

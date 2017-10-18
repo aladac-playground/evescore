@@ -13,16 +13,16 @@
     <% @valuable_rats.each do |record| %>
       <tr>
         <td><%= kill_image(record) %></td>
-        <td><%= record.rat.name %></td>
-        <td><%= record.rat.group %></td>
+        <td><%= record['name'] %></td>
+        <td><%= record['group'] %></td>
         <td class="numeric">
-          <%= number_with_delimiter record.amount %>
+          <%= number_with_delimiter record['amount'] %>
         </td>
         <td class="numeric">
-          <%= number_to_isk record.rat.bounty %>
+          <%= number_to_isk record['bounty'] %>
         </td>
         <td class="numeric">
-          ( <%= number_to_isk_short record.rat.bounty %> )
+          ( <%= number_to_isk_short record['bounty'] %> )
         </td>
       </tr>
     <% end %>

@@ -13,7 +13,6 @@ class Character
   belongs_to :user
   has_many :wallet_records
   has_many :kills
-  embeds_many :earnings
 
   after_save :create_corporation
   after_create :queue_initial_import

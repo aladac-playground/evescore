@@ -27,23 +27,23 @@ module ApplicationHelper
 
   def navbar_portrait(character)
     title = character.name
-    character_image(character.id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
+    character_image(character.id, 32, tooltip(title))
   end
 
   def character_image(character_id, size = 64, options = {})
-    options['class'] = 'img-rounded portrait'
+    options[:class] = 'img-rounded portrait'
     image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", options
   end
 
   def type_image(type_id, size = 32, options = {})
-    options['class'] = 'img-rounded'
+    options[:class] = 'img-rounded'
     image_tag("https://image.eveonline.com/Type/#{type_id}_#{size}.png", options)
   end
 
   def kill_image(kill)
     kill = OpenStruct.new(kill) if kill.class == BSON::Document
     title = "<strong>#{kill.name}</strong><br>#{kill.amount} kills"
-    type_image(kill.rat_id, 32, 'data-toggle' => 'tooltip', 'data-placement' => 'top', title: title.html_safe)
+    type_image(kill.rat_id, 32, tooltip(title))
   rescue ActionView::Template::Error
     ''
   end
@@ -60,17 +60,29 @@ module ApplicationHelper
     type_image(29, 32)
   end
 
-  def corporation_image(corporation_id, size = 32)
-    image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", class: 'img img-rounded')
+  def corporation_image(corporation_id, size = 32, options = {})
+    options[:class] = 'img-rounded'
+    image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", options)
   end
 
   def record_icon(record)
     case record.type
     when 'bounty_prizes'
-      corporation_image(1_000_125)
-    when 'agent_mission_reward'
-      corporation_image(record.agent.corporation_id)
+      corporation_image(1_000_125, 32, tooltip('CONCORD'))
+    when 'agent_mission_reward', 'agent_mission_time_bonus_reward'
+      options = tooltip Corporation.find(record.agent.corporation_id).name
+      corporation_image(record.agent.corporation_id, 32, options)
     end
+  end
+
+  def tooltip(title)
+    { data: { toggle: 'tooltip', placement: 'top' }, title: title }
+  end
+
+  def mission_level_label(mission_level)
+    classes = { 1 => 'success', 2 => 'info', 3 => 'warning', 4 => 'danger', 5 => 'purple' }
+    concat content_tag(:span, "Level #{mission_level}", class: "label label-#{classes[mission_level]}")
+    concat '&nbsp;'.html_safe
   end
 
   def record_details(record)
@@ -78,7 +90,11 @@ module ApplicationHelper
     when 'bounty_prizes'
       content_tag(:span, 'Bounty', class: 'label label-primary')
     when 'agent_mission_reward'
-      content_tag(:span, "#{record.agent.division} Mission Level #{record.agent.level} Reward", class: 'label label-primary')
+      mission_level_label(record.mission_level)
+      content_tag(:span, "#{record.agent.division} Mission Reward", class: 'label label-primary')
+    when 'agent_mission_time_bonus_reward'
+      mission_level_label(record.mission_level)
+      content_tag(:span, "#{record.agent.division} Mission Time Bonus Reward", class: 'label label-primary')
     end
   end
 end

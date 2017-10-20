@@ -1,13 +1,20 @@
 # frozen_string_literal: true
 
-desc 'Import EVE SDE and API data'
-task import: :environment do
-  Corporation.delete_all
-  Agent.delete_all
-  Faction.delete_all
-  create_corps
-  create_agents
-  create_factions
+namespace :import do
+  desc 'Import all EVE SDE and API data'
+  task all: :environment do
+    Corporation.delete_all(npc: true)
+    Agent.delete_all
+    Faction.delete_all
+    create_corps
+    create_agents
+    create_factions
+  end
+  desc 'Import NPC corporations from EVE SDE and API data'
+  task corps: :environment do
+    Corporation.delete_all(npc: true)
+    create_corps
+  end
 end
 
 def create_agents

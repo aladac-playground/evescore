@@ -13,6 +13,7 @@ class WalletRecord
   belongs_to :character
   belongs_to :user, optional: true
   belongs_to :agent, optional: true
+  belongs_to :ded_site, optional: true
   has_many :kills, autosave: true
   validates :ts, uniqueness: { scope: %i[character_id ref_id] }
 
@@ -45,11 +46,18 @@ class WalletRecord
   def parse_rats(text)
     text.split(',').map { |a| a.split(":\s") }
   end
+  
+  def check_ded_site(rat_id)
+    DedSite.where(boss_id: rat_id).first
+  end
 
   def build_kills(text)
     return false if text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
     parse_rats(text).each do |rat_info|
       kills.build(rat_id: rat_info[0].to_i, amount: rat_info[1], date: date, ts: ts, character_id: character_id, user_id: user_id)
+      if ded = check_ded_site(rat_info[0])
+        self.ded_site_id = ded.id
+      end
     end
   end
 end

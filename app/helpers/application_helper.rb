@@ -36,7 +36,10 @@ module ApplicationHelper
   end
 
   def type_image(type_id, size = 32, options = {})
+    ded_boss = DedSite.all.map(&:boss_id).include?(type_id)
     options[:class] = 'img-rounded'
+    options[:style] = 'border: 1px solid; border-color: red' if ded_boss
+    # concat = '&nbsp;'.html_safe
     image_tag("https://image.eveonline.com/Type/#{type_id}_#{size}.png", options)
   end
 
@@ -88,7 +91,11 @@ module ApplicationHelper
   def record_details(record)
     case record.type
     when 'bounty_prizes'
-      content_tag(:span, 'Bounty', class: 'label label-primary')
+      concat content_tag(:span, 'Bounty', class: 'label label-primary')
+      if !record.ded_site.blank?
+        ded_site = record.ded_site
+        content_tag(:span, ded_site.level, class: 'label label-danger')
+      end
     when 'agent_mission_reward'
       mission_level_label(record.mission_level)
       content_tag(:span, "#{record.agent.division} Mission Reward", class: 'label label-primary')

@@ -15,6 +15,14 @@ namespace :import do
     Corporation.delete_all(npc: true)
     create_corps
   end
+  desc 'Perform WalletRecord import from ESI'
+  task wallets: :environment do
+    import_wallets
+  end
+end
+
+def logger
+  Logger.new(STDOUT)
 end
 
 def create_agents
@@ -36,4 +44,19 @@ def create_factions
   factions.tqdm(leave: true, desc: 'Importing Factions').each do |faction|
     Faction.create(faction)
   end
+end
+
+def import_wallets
+  User.all.each do |user|
+    user.characters.each do |character|
+      import_wallet(character)
+    end
+  end
+end
+
+def import_wallet(character)
+  start = Time.now.to_f
+  logger.info "Starting import for: #{character.id}"
+  character.import_wallet
+  logger.info "Finished import for: #{character.id}, took: #{format '%.2f', Time.now.to_f - start} seconds"
 end

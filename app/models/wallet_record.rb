@@ -9,6 +9,7 @@ class WalletRecord
   field :type, type: String
   field :ref_id, type: Integer
   field :mission_level, type: Integer
+  field :ded_site, type: DedSite
   index({ character_id: 1, ts: 1 }, unique: true, drop_dups: true)
   belongs_to :character
   belongs_to :user, optional: true
@@ -16,6 +17,9 @@ class WalletRecord
   belongs_to :ded_site, optional: true
   has_many :kills, autosave: true
   validates :ts, uniqueness: { scope: %i[character_id ref_id] }
+
+  scope :ded_sites, -> { where(:ded_site_id.ne => nil) }
+  scope :missions, -> { where(:mission_level.ne => nil) }
 
   IMPORTABLE_REF_TYPES = %w[
     agent_mission_time_bonus_reward
@@ -46,18 +50,21 @@ class WalletRecord
   def parse_rats(text)
     text.split(',').map { |a| a.split(":\s") }
   end
-  
+
   def check_ded_site(rat_id)
     DedSite.where(boss_id: rat_id).first
   end
 
+  def kills_present?(text)
+    text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
+    match = Regexp.new("/(#{DedSite.all.map(&:boss_id).join('|')})/")
+    self.ded_site = Ded.site if text.match?(match)
+  end
+
   def build_kills(text)
-    return false if text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
+    return false if kills_present?(text)
     parse_rats(text).each do |rat_info|
       kills.build(rat_id: rat_info[0].to_i, amount: rat_info[1], date: date, ts: ts, character_id: character_id, user_id: user_id)
-      if ded = check_ded_site(rat_info[0])
-        self.ded_site_id = ded.id
-      end
     end
   end
 end

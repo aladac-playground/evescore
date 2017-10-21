@@ -1,0 +1,14 @@
+%table.table.table-striped
+  %caption
+    To add characters click
+    \#{login_with_eve}
+    and select the character you wish to add
+  %thead
+    %tr
+      %th
+      %th Name
+      %th Corporation Name
+      %th
+  %tbody
+    - @characters.each do |character|
+      = render partial: 'character', object: character

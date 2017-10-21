@@ -37,7 +37,7 @@ module ApplicationHelper
 
   def type_image(type_id, size = 32, options = {})
     ded_boss = DedSite.all.map(&:boss_id).include?(type_id)
-    options[:class] = 'img-rounded'
+    options[:class] = 'img-rounded cursor-hand'
     options[:style] = 'border: 1px solid; border-color: red' if ded_boss
     # concat = '&nbsp;'.html_safe
     image_tag("https://image.eveonline.com/Type/#{type_id}_#{size}.png", options)
@@ -68,6 +68,11 @@ module ApplicationHelper
     image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", options)
   end
 
+  def faction_image(faction_id)
+    faction = Faction.find(faction_id)
+    corporation_image faction.corporation_id, 32, tooltip(faction.corporation.name)
+  end
+
   def record_icon(record)
     case record.type
     when 'bounty_prizes'
@@ -84,24 +89,30 @@ module ApplicationHelper
 
   def mission_level_label(mission_level)
     classes = { 1 => 'success', 2 => 'info', 3 => 'warning', 4 => 'danger', 5 => 'purple' }
-    concat content_tag(:span, "Level #{mission_level}", class: "label label-#{classes[mission_level]}")
-    concat '&nbsp;'.html_safe
+    content_tag(:span, "LEVEL #{mission_level}", class: "label label-#{classes[mission_level]}")
+  end
+
+  def mission_label(agent, type = 'Mission')
+    mission_level_label(agent.level) + '&nbsp;'.html_safe + content_tag(:span, "#{agent.division} #{type}", class: 'label label-primary')
+  end
+
+  def ded_site?(ded_site, options = {})
+    return if ded_site.blank?
+    ded_site = OpenStruct.new(ded_site) if ded_site.class == BSON::Document
+    options[:class] = 'label label-danger cursor-hand'
+    options.merge! tooltip(ded_site.name)
+    '&nbsp;'.html_safe + content_tag(:span, "DED #{ded_site.level}", options)
   end
 
   def record_details(record)
     case record.type
     when 'bounty_prizes'
       concat content_tag(:span, 'Bounty', class: 'label label-primary')
-      if !record.ded_site.blank?
-        ded_site = record.ded_site
-        content_tag(:span, ded_site.level, class: 'label label-danger')
-      end
+      ded_site?(record.ded_site)
     when 'agent_mission_reward'
-      mission_level_label(record.mission_level)
-      content_tag(:span, "#{record.agent.division} Mission Reward", class: 'label label-primary')
+      mission_label(record.agent)
     when 'agent_mission_time_bonus_reward'
-      mission_level_label(record.mission_level)
-      content_tag(:span, "#{record.agent.division} Mission Time Bonus Reward", class: 'label label-primary')
+      mission_label(record.agent, 'Mission Time Bonus')
     end
   end
 end

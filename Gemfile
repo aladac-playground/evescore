@@ -13,6 +13,7 @@ gem 'daemons'
 gem 'delayed_job_mongoid'
 gem 'devise'
 gem 'devise-bootstrapped'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-mongoid'
@@ -27,7 +28,6 @@ gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
-gem 'haml-rails'
 
 group :test do
   gem 'simplecov', require: false

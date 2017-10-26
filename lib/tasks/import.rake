@@ -34,6 +34,7 @@ def import_all
   Corporation.delete_all(npc: true)
   Agent.delete_all
   Faction.delete_all
+  DedSite.delete_all
   create_corps
   create_agents
   create_factions

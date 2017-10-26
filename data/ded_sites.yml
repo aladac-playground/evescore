@@ -1,0 +1,11 @@
+---
+- !ruby/hash:BSON::Document
+  boss_id: 25528
+  faction_id: 500010
+  level: 10/10
+  name: The Maze
+- !ruby/hash:BSON::Document
+  boss_id: 19592
+  faction_id: 500010
+  level: 8/10
+  name: Pith Penal Complex

@@ -3,12 +3,7 @@
 namespace :import do
   desc 'Import all EVE SDE and API data'
   task all: :environment do
-    Corporation.delete_all(npc: true)
-    Agent.delete_all
-    Faction.delete_all
-    create_corps
-    create_agents
-    create_factions
+    import_all
   end
   desc 'Import NPC corporations from EVE SDE and API data'
   task corps: :environment do
@@ -19,10 +14,30 @@ namespace :import do
   task wallets: :environment do
     import_wallets
   end
+  desc 'Import NPC Factions from EVE SDE and API data'
+  task factions: :environment do
+    Faction.delete_all
+    create_factions
+  end
+  desc 'Import DED Sites'
+  task ded_sites: :environment do
+    DedSite.delete_all
+    create_ded_sites
+  end
 end
 
 def logger
   Logger.new(STDOUT)
+end
+
+def import_all
+  Corporation.delete_all(npc: true)
+  Agent.delete_all
+  Faction.delete_all
+  create_corps
+  create_agents
+  create_factions
+  create_ded_sites
 end
 
 def create_agents
@@ -43,6 +58,13 @@ def create_factions
   factions = YAML.load_file('data/factions.yml')
   factions.tqdm(leave: true, desc: 'Importing Factions').each do |faction|
     Faction.create(faction)
+  end
+end
+
+def create_ded_sites
+  ded_sites = YAML.load_file('data/ded_sites.yml')
+  ded_sites.tqdm(leave: true, desc: 'Importing DED Sites').each do |ded_site|
+    DedSite.create(ded_site)
   end
 end
 

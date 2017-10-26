@@ -79,11 +79,11 @@ module ProfileStats
   end
 
   def favourite_ded_site
-    ded_sites_by_site.first
+    ded_sites_by_site.first || {}
   end
 
   def favourite_mission_level
-    missions_by_level.first.try(:[], 'level') || '-'
+    missions_by_level.first.try(:[], 'level')
   end
 
   def ded_sites_run

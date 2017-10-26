@@ -46,7 +46,7 @@
         - @earnings_by_day.each do |record|
           %tr
             %td= isk_image
-            %td= record['date']
+            %td= record['date'].to_date.to_s
             %td.numeric= number_to_isk record['amount']
   .col-sm-4
     %table.table.table-striped

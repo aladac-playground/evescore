@@ -9,7 +9,6 @@ class WalletRecord
   field :type, type: String
   field :ref_id, type: Integer
   field :mission_level, type: Integer
-  field :ded_site, type: DedSite
   index({ character_id: 1, ts: 1 }, unique: true, drop_dups: true)
   belongs_to :character
   belongs_to :user, optional: true
@@ -51,18 +50,21 @@ class WalletRecord
     text.split(',').map { |a| a.split(":\s") }
   end
 
-  def check_ded_site(rat_id)
-    DedSite.where(boss_id: rat_id).first
+  def check_ded_site_id(rat_id)
+    DedSite.where(boss_id: rat_id.to_i).first.id
   end
 
   def kills_present?(text)
-    text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
-    match = Regexp.new("/(#{DedSite.all.map(&:boss_id).join('|')})/")
-    self.ded_site = Ded.site if text.match?(match)
+    return false if text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
+    match = ::Regexp.new("(#{DedSite.all.map(&:boss_id).join('|')})")
+    if (boss_match = text.match(match))
+      self.ded_site_id = check_ded_site_id(boss_match[1])
+    end
+    true
   end
 
   def build_kills(text)
-    return false if kills_present?(text)
+    return false unless kills_present?(text)
     parse_rats(text).each do |rat_info|
       kills.build(rat_id: rat_info[0].to_i, amount: rat_info[1], date: date, ts: ts, character_id: character_id, user_id: user_id)
     end

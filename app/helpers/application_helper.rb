@@ -69,6 +69,7 @@ module ApplicationHelper
   end
 
   def faction_image(faction_id)
+    return '-' if faction_id.blank?
     faction = Faction.find(faction_id)
     corporation_image faction.corporation_id, 32, tooltip(faction.corporation.name)
   end
@@ -89,7 +90,9 @@ module ApplicationHelper
 
   def mission_level_label(mission_level)
     classes = { 1 => 'success', 2 => 'info', 3 => 'warning', 4 => 'danger', 5 => 'purple' }
-    content_tag(:span, "LEVEL #{mission_level}", class: "label label-#{classes[mission_level]}")
+    text = mission_level ? "LEVEL #{mission_level}" : '-'
+    html_class = mission_level ? "label label-#{classes[mission_level]}" : nil
+    content_tag(:span, text, class: html_class)
   end
 
   def mission_label(agent, type = 'Mission')

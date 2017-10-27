@@ -16,3 +16,6 @@
       - if current_user
         %li
           = link_to icon('log-out'), destroy_user_session_path, method: :delete
+      - else
+        %li
+          = link_to icon('log-in'), new_user_session_path

@@ -39,7 +39,7 @@
         %span.pull-right= link_to 'More', character_earnings_path(@character)
       %thead
         %tr
-          %th
+          %th.icon
           %th Date
           %th.numeric Amount
       %tbody
@@ -55,7 +55,7 @@
         %span.pull-right= link_to 'More', character_ticks_path(@character)
       %thead
         %tr
-          %th
+          %th.icon
           %th Timestamp
           %th.numeric Amount
       %tbody
@@ -71,7 +71,7 @@
         %span.pull-right= link_to 'More', character_rats_path(@character)
       %thead
         %tr
-          %th
+          %th.icon
           %th Rat Name
           %th.numeric Bounty
       %tbody
@@ -87,8 +87,8 @@
   %thead
     %tr
       %th.icon
-      %th Timestamp
-      %th Details
+      %th.timestamp Timestamp
+      %th.details Details
       %th
       %th.numeric Amount
   %tbody

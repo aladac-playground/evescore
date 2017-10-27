@@ -69,4 +69,26 @@ class WalletRecord
       kills.build(rat_id: rat_info[0].to_i, amount: rat_info[1], date: date, ts: ts, character_id: character_id, user_id: user_id)
     end
   end
+
+  def self.public
+    where(:character_id.in => Character.public.map(&:id))
+  end
+
+  def self.public_top_ticks
+    public.order('amount desc')
+  end
+
+  def self.public_top_isk(limit = nil)
+    query = public.group(_id: '$character_id', :amount.sum => '$amount').desc(:amount)
+    pipeline = query.pipeline
+    pipeline.push('$limit' => limit) if limit
+    collection.aggregate pipeline
+  end
+
+  def self.public_top_average_ticks(limit = nil)
+    query = public.group(_id: '$character_id', :amount.avg => '$amount').desc(:amount)
+    pipeline = query.pipeline
+    pipeline.push('$limit' => limit) if limit
+    collection.aggregate pipeline
+  end
 end

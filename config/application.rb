@@ -33,5 +33,6 @@ module Evescore
     config.active_job.queue_adapter     = :delayed_job
     config.active_job.queue_name_prefix = "evescore_#{Rails.env}"
     config.action_mailer.perform_caching = false
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

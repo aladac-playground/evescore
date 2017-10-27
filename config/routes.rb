@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'characters/:character_id/journal', to: 'characters#journal', as: :character_journal
   delete 'characters/:character_id/destroy', to: 'characters#destroy', as: :character_destroy
   patch 'characters/:character_id/display_option', to: 'characters#display_option', as: :character
+  get 'ticks', to: 'welcome#ticks', as: :global_ticks
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'welcome#index'

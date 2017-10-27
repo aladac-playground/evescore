@@ -2,6 +2,7 @@
 
 class CharactersController < AuthController
   before_action :set_character, except: %i[index]
+  skip_before_action :authenticate_user!, if: :character_public?
 
   DEFAULT_PER_PAGE = 10
 
@@ -50,5 +51,10 @@ class CharactersController < AuthController
 
   def character_params
     params.require(:character).permit(:display_option)
+  end
+
+  def character_public?
+    return false if params[:action] == 'index'
+    set_character.display_option == 'Public'
   end
 end

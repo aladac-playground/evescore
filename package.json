@@ -1,5 +1,7 @@
 {
   "name": "evescore",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-select": "^1.12.4"
+  }
 }

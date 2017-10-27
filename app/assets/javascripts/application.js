@@ -18,5 +18,6 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $('[data-toggle="tooltip"]').tooltip({ html: true })
+  $('[data-toggle="tooltip"]').tooltip({ html: true });
+  $('.selectpicker').selectpicker();
 })

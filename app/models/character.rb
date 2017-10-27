@@ -9,7 +9,9 @@ class Character
   field :access_token, type: String
   field :refresh_token, type: String
   field :token_expires, type: Time
+  field :display_option, type: String
   belongs_to :corporation, optional: true
+  belongs_to :alliance, optional: true
   belongs_to :user
   has_many :wallet_records
   has_many :kills

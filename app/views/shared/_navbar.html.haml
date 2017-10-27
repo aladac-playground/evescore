@@ -9,8 +9,10 @@
       %a.navbar-brand{:href => "/"}
         = image_tag 'evescore.png'
       .nav.navbar-brand
-        - current_user.characters.each do |character|
-          = link_to navbar_portrait(character), character_profile_path(character)
+        - if current_user
+          - current_user.characters.each do |character|
+            = link_to navbar_portrait(character), character_profile_path(character)
     %ul.nav.navbar-nav.navbar-right
-      %li
-        = link_to icon('log-out'), destroy_user_session_path, method: :delete
+      - if current_user
+        %li
+          = link_to icon('log-out'), destroy_user_session_path, method: :delete

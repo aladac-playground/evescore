@@ -15,7 +15,10 @@
     %ul.nav.navbar-nav.navbar-right
       - if current_user
         %li
+          = link_to icon('user'), characters_path
+        %li
           = link_to icon('log-out'), destroy_user_session_path, method: :delete
       - else
         %li
           = link_to icon('log-in'), new_user_session_path
+

@@ -15,6 +15,7 @@ th.details {
 .cursor-hand {
   cursor: pointer;
 }
+
 .label-purple {
   background-color: #8e10fc;
 }
@@ -24,9 +25,8 @@ th.details {
   margin-left: -11px;
 }
 
-.navbar-brand > a > img.portrait {
-  margin-top: -7px;
-  margin-left: 2px;
+.navbar img.portrait {
+  margin: -7px;
 }
 
 body {

@@ -8,12 +8,10 @@
         %span.icon-bar
       %a.navbar-brand{:href => "/"}
         = image_tag 'evescore.png'
-      .nav.navbar-brand
-        - if current_user
-          - current_user.characters.each do |character|
-            = link_to navbar_portrait(character), character_profile_path(character)
     %ul.nav.navbar-nav.navbar-right
       - if current_user
+        - current_user.characters.each do |character|
+          %li= link_to navbar_portrait(character), character_profile_path(character)      
         %li
           = link_to icon('user'), characters_path
         %li

@@ -2,7 +2,13 @@
   %td
     = link_to character_image(character.id), character_profile_path(character.id)
     = corporation_image(character.corporation_id, 64)
+    = alliance_image(character.alliance_id, 64)
   %td= link_to character.name, character_profile_path(character.id)
   %td= character.corporation.name
+  %td= character.alliance.name
+  %td
+    = form_for character do |f|
+      = f.select :display_option, [ 'Private', 'Public', 'Alliance', 'Corporation' ], {}, { class: 'selectpicker' }
+      = f.submit 'Set', class: 'btn btn-success'
   %td
     = link_to 'Delete', character_destroy_path(character.id), method: :delete, class: 'btn btn-danger pull-right'

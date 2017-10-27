@@ -37,9 +37,18 @@ class WelcomeController < ApplicationController
     redirect_to root_path, notice: 'Character removed'
   end
 
+  def display_option
+    redirect_to root_path, alert: 'Something went wrong with display option change' && return unless @character.update(character_params)
+    redirect_to root_path, notice: "Display option for #{@character.name} now set to #{character_params[:display_option]}"
+  end
+
   protected
 
   def set_character
     @character = Character.find(params[:character_id].to_i)
+  end
+
+  def character_params
+    params.require(:character).permit(:display_option)
   end
 end

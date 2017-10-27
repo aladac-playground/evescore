@@ -49,7 +49,7 @@ class User
     character_id = omniauth_payload['extra']['raw_info']['CharacterID']
     api_character = character_api.get_characters_character_id(character_id)
     credentials = omniauth_payload['credentials']
-    character = characters.where(id: character_id, name: api_character.name, corporation_id: api_character.corporation_id).first_or_create
+    character = characters.where(id: character_id, name: api_character.name, corporation_id: api_character.corporation_id, alliance_id: api_character.alliance_id).first_or_create
     character.update_tokens(credentials)
   end
 end

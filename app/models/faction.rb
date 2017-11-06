@@ -5,7 +5,7 @@ class Faction
   field :name, type: String
   field :pattern, type: Regexp
   validates :name, uniqueness: true
-  belongs_to :corporation
+  belongs_to :corporation, optional: true
   has_many :rats
 
   def self.detect(string)

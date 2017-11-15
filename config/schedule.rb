@@ -21,6 +21,6 @@ set :output, '/home/rails/evescore/cron.log'
 
 # Learn more: http://github.com/javan/whenever
 env :PATH, ENV['PATH']
-every 1.hour do
+every 10.minutes do
   rake 'import:wallets'
 end

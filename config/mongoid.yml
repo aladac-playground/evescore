@@ -158,9 +158,7 @@ test:
 production:
   clients:
     default:
-      database: evescore
-      hosts:
-        - <%= ENV['MONGODB_URI'] %>
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
         read:
           mode: :primary

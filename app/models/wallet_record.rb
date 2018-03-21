@@ -70,23 +70,23 @@ class WalletRecord
     end
   end
 
-  def self.public
-    where(:character_id.in => Character.public.map(&:id))
+  def self.public_records
+    where(:character_id.in => Character.public_characters.map(&:id))
   end
 
   def self.public_top_ticks
-    public.order('amount desc')
+    public_records.order('amount desc')
   end
 
   def self.public_top_isk(limit = nil)
-    query = public.group(_id: '$character_id', :amount.sum => '$amount').desc(:amount)
+    query = public_records.group(_id: '$character_id', :amount.sum => '$amount').desc(:amount)
     pipeline = query.pipeline
     pipeline.push('$limit' => limit) if limit
     collection.aggregate pipeline
   end
 
   def self.public_top_average_ticks(limit = nil)
-    query = public.group(_id: '$character_id', :amount.avg => '$amount').desc(:amount)
+    query = public_records.group(_id: '$character_id', :amount.avg => '$amount').desc(:amount)
     pipeline = query.pipeline
     pipeline.push('$limit' => limit) if limit
     collection.aggregate pipeline

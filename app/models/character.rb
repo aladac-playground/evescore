@@ -16,7 +16,7 @@ class Character
   has_many :wallet_records
   has_many :kills
 
-  scope :public, -> { where(display_option: 'Public') }
+  scope :public_characters, -> { where(display_option: 'Public') }
 
   after_save :create_corporation
   after_create :queue_initial_import

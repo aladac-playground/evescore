@@ -18,4 +18,8 @@
 
 .byebug_history
 /coverage/*
-/public/capybara.html
+/public/capybara.html/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

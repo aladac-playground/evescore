@@ -160,7 +160,7 @@ production:
     default:
       database: evescore
       hosts:
-        - localhost:27017
+        - <%= ENV['MONGODB_URI'] %>
       options:
         read:
           mode: :primary

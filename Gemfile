@@ -28,6 +28,7 @@ gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
+gem 'webpacker'
 
 group :test do
   gem 'simplecov', require: false

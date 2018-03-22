@@ -37,6 +37,7 @@ module ImageHelper
   end
 
   def corporation_image(corporation_id, size = 32, options = {})
+    return '-' unless corporation_id
     options[:class] = 'img-rounded'
     image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", options)
   end

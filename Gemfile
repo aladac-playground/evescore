@@ -27,8 +27,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'tqdm'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'whenever'
-gem 'webpacker'
 
 group :test do
   gem 'simplecov', require: false
@@ -48,9 +46,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano-passenger'
-  gem 'capistrano-rails'
-  gem 'capistrano3-delayed-job'
   gem 'letter_opener'
   gem 'rubocop'
   gem 'spring'

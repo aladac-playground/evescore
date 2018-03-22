@@ -3,5 +3,8 @@
   "private": true,
   "dependencies": {
     "bootstrap-select": "^1.12.4"
+  },
+  "engines": {
+    "yarn": "1.5.1"
   }
 }

@@ -7,3 +7,4 @@ Documentation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
+    - 'lib/tasks/*.rake'

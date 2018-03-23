@@ -32,8 +32,13 @@ class Rat
 
   def rat_attributes
     types_api.dogma_attributes.map do |attribute|
+      dgm = DogmaAttributeType.find(attribute.attribute_id)
       {
-        ESI::DogmaApi.new.get_dogma_attributes_attribute_id(attribute.attribute_id).description => attribute.value
+        id: dgm.id,
+        name: dgm.attribute_name,
+        display_name: dgm.display_name,
+        value: attribute.value,
+        description: dgm.description
       }
     end
   end

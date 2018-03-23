@@ -24,6 +24,16 @@ namespace :import do
     DedSite.delete_all
     create_ded_sites
   end
+  desc 'Import Dogma Attribute Types'
+  task dogma_attribute_types: :environment do
+    DogmaAttributeType.delete_all
+    create_dogma_attribute_types
+  end
+  desc 'Import Charges'
+  task charges: :environment do
+    Charge.delete_all
+    create_charges
+  end
 end
 
 def logger
@@ -39,6 +49,21 @@ def import_all
   create_agents
   create_factions
   create_ded_sites
+  create_dogma_attribute_types
+end
+
+def create_charges
+  charges = YAML.load_file('data/charges.yml')
+  charges.tqdm(leave: true, desc: 'Importing Charges').each do |charge|
+    Charge.create(charge)
+  end
+end
+
+def create_dogma_attribute_types
+  dogma_attribute_types = YAML.load_file('data/dogma_attribute_types.yml')
+  dogma_attribute_types.tqdm(leave: true, desc: 'Importing Dogma Attribute Types').each do |dogma_attribute_type|
+    DogmaAttributeType.create(dogma_attribute_type)
+  end
 end
 
 def create_agents

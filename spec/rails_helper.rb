@@ -42,16 +42,20 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include FactoryBot::Syntax::Methods
 
+  config.after :each do
+    Warden.test_reset!
+  end
+
   config.before(:suite) do
     DatabaseCleaner.clean
   end
 
   config.before(:each) do
-    DatabaseCleaner.start
+    DatabaseCleaner.clean
   end
 
-  config.append_after(:each) do
-    DatabaseCleaner.clean
+  config.around(:each) do |example|
+    VCR.use_cassette(:esi, record: :new_episodes, &example)
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests

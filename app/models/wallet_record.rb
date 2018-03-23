@@ -56,12 +56,15 @@ class WalletRecord
 
   def kills_present?(text)
     return false if text.blank? || text.match(/(\d+:+\s+\d+,?)+/).blank?
+    assign_ded_site(text)
+    true
+  end
+
+  def assign_ded_site(text)
     pattern = DedSite.all.map(&:boss_id).join('|')
     match = ::Regexp.new("(#{pattern})")
-    if (boss_match = text.match(match))
-      self.ded_site_id = check_ded_site_id(boss_match[1]) unless pattern.empty?
-    end
-    true
+    boss_match = text.match(match)
+    self.ded_site_id = check_ded_site_id(boss_match[1]) if !pattern.empty? && boss_match
   end
 
   def build_kills(text)

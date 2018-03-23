@@ -9,14 +9,10 @@ class Faction
   has_many :rats
 
   def self.detect(string)
-    output = nil
     all.each do |faction|
       next if faction.pattern.nil?
-      if faction.pattern.compile.match?(string)
-        output = faction
-        break
-      end
+      return faction if faction.pattern.compile.match?(string)
     end
-    output
+    nil
   end
 end

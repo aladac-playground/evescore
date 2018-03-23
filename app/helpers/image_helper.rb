@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module ImageHelper
+  def icon_tag(icon, _tooltip = nil)
+    image_tag("icons/#{icon}", style: 'height: 32px', data: { toggle: 'tooltip' }, title: 'tooltip')
+  end
+
   def navbar_portrait(character)
     title = character.name
     character_image(character.id, 32, tooltip(title))

@@ -33,13 +33,15 @@ class Rat
   def rat_attributes
     types_api.dogma_attributes.map do |attribute|
       dgm = DogmaAttributeType.find(attribute.attribute_id)
-      {
-        id: dgm.id,
-        name: dgm.attribute_name,
-        display_name: dgm.display_name,
-        value: attribute.value,
-        description: dgm.description
-      }
-    end
+      OpenStruct.new(id: dgm.id,
+                     name: dgm.attribute_name,
+                     display_name: dgm.display_name,
+                     value: attribute.value,
+                     description: dgm.description)
+    end.reject(&:zero?).select(&:display_name)
+  end
+
+  def structure_hitpoints
+    rat_attributes.select { |a| a.id == 9 }[0]
   end
 end

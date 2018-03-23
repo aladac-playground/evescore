@@ -1,0 +1,14 @@
+.panel.panel-default
+  .panel-heading= @rat.name
+  .panel-body
+    %table.table.table-condensed
+      %tr
+        %td
+          = icon_tag 'structure'
+          = @rat.structure_hitpoints.display_name
+          = @rat.structure_hitpoints.value
+    %table.table
+      - @rat.rat_attributes.each do |attribute|
+        %tr
+          %th= attribute.display_name
+          %td= number_with_delimiter attribute.value

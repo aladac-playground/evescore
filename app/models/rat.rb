@@ -24,7 +24,7 @@ class Rat
   end
 
   def set_faction
-    faction = Faction.detect(group)
+    faction = Faction.detect(group) || Faction.detect(name)
     return false unless faction
     self.faction_name = faction.name
     self.faction_id = faction.id

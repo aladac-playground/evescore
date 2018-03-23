@@ -15,9 +15,11 @@ class WelcomeController < ApplicationController
 
   def average_ticks
     @top_average_ticks = Kaminari.paginate_array(WalletRecord.public_top_average_ticks.to_a).page(params[:page]).per(DEFAULT_PER_PAGE)
+    head :ok
   end
 
   def isk
     @top_isk = Kaminari.paginate_array(WalletRecord.public_top_isk.to_a).page(params[:page]).per(DEFAULT_PER_PAGE)
+    head :ok
   end
 end

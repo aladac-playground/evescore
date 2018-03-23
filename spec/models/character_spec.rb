@@ -26,4 +26,11 @@ RSpec.describe Character, type: :model do
       expect { create(:character, user_id: user.id) }.not_to raise_error
     end
   end
+
+  context '#update_tokens' do
+    it 'updates tokens' do
+      credentials = { 'token' => 'foobar', 'refresh_token' => 'foobar', 'expires_at' => Time.now.to_i }
+      expect { Character.new.update_tokens(credentials) }.not_to raise_error
+    end
+  end
 end

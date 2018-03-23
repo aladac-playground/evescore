@@ -12,5 +12,10 @@ FactoryBot.define do
       name 'Caldari Navy'
       ticker 'CN'
     end
+    trait :guristas do
+      id 1_000_127
+      name 'Guristas'
+      ticker 'G'
+    end
   end
 end

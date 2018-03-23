@@ -29,6 +29,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'

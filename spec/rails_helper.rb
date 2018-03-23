@@ -10,6 +10,9 @@ require 'rspec/rails'
 require 'capybara/poltergeist'
 require 'vcr'
 require 'webmock/rspec'
+require 'database_cleaner'
+
+DatabaseCleaner.clean_with :truncation
 
 Capybara.javascript_driver = :poltergeist
 
@@ -37,6 +40,19 @@ end
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    DatabaseCleaner.clean
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.append_after(:each) do
+    DatabaseCleaner.clean
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

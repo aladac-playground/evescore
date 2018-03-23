@@ -1,0 +1,2712 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/corporations/1000009/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:04:49 GMT
+      Expires:
+      - Fri, 23 Mar 2018 10:30:28 GMT
+      Last-Modified:
+      - Fri, 23 Mar 2018 09:30:28 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Warning:
+      - 299 - This endpoint is deprecated.
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '11'
+      Content-Length:
+      - '485'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"corporation_name":"Caldari Provisions","ticker":"CP","member_count":236030,"ceo_id":3004073,"corporation_description":"Caldari
+        Provisions is one of the companies that were created by war veterans of the
+        Gallente-Caldari War. Specializing in the distribution of supply and logistics,
+        Caldari Provisions have carved themselves a nice little niche within the Caldari
+        State and are looking towards expanding their operation in other empires.","tax_rate":0.11,"creator_id":1,"url":"None"}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:04:49 GMT
+- request:
+    method: post
+    uri: https://login.eveonline.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"refresh_token","refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZDhlNjRmMGQwYTRlNGE0ZDg2NzA1MmIwYzkzZWMwMWU6Y1pRdmlwMmw5WXk3dGJ6bWppQkNlcnhoc1hKM2l3SEh4cEV5N09CVw==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      Request-Context:
+      - appId=cid-v1:2ccf88f2-29b9-460a-bc15-7c0b79926f61
+      Date:
+      - Fri, 23 Mar 2018 10:12:48 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '209'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"mFprwstkZC9XhBsvpkcY8fDT7bgRg48RAqo3JB6UiYJuCCPFSosQMNKq2mV2oOkl4DUBtB9zddnrWLG4MsOxyQ2","token_type":"Bearer","expires_in":1200,"refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:12:48 GMT
+- request:
+    method: post
+    uri: https://login.eveonline.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"refresh_token","refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZDhlNjRmMGQwYTRlNGE0ZDg2NzA1MmIwYzkzZWMwMWU6Y1pRdmlwMmw5WXk3dGJ6bWppQkNlcnhoc1hKM2l3SEh4cEV5N09CVw==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      Request-Context:
+      - appId=cid-v1:2ccf88f2-29b9-460a-bc15-7c0b79926f61
+      Date:
+      - Fri, 23 Mar 2018 10:12:48 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '209'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"T-0T51vrjXk0ca1VavQPRY1qeLSiCW1ouVRilFyXNz7yy4fFRY0PpwCin-P__5FQ7-9gBACQux_RAAObG5Hp_g2","token_type":"Bearer","expires_in":1199,"refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:12:48 GMT
+- request:
+    method: post
+    uri: https://login.eveonline.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"refresh_token","refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic ZDhlNjRmMGQwYTRlNGE0ZDg2NzA1MmIwYzkzZWMwMWU6Y1pRdmlwMmw5WXk3dGJ6bWppQkNlcnhoc1hKM2l3SEh4cEV5N09CVw==
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      Request-Context:
+      - appId=cid-v1:2ccf88f2-29b9-460a-bc15-7c0b79926f61
+      Date:
+      - Fri, 23 Mar 2018 10:12:49 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '209'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"NlgOqCiffdgcXIOtkuNaV21Z4DmJXuxH5niaQ8fGN89QdyOgwNeqnhEdKmINgmuq7FLYXo_7zPnA6yjMDGN3SQ2","token_type":"Bearer","expires_in":1200,"refresh_token":"XC2dQmbNqVNKtlowKHMl-l4SdXvJR6P_suvCoa38AsI1"}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:12:49 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/corporations/1000009/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:12:49 GMT
+      Expires:
+      - Fri, 23 Mar 2018 10:30:28 GMT
+      Last-Modified:
+      - Fri, 23 Mar 2018 09:30:28 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Warning:
+      - 299 - This endpoint is deprecated.
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '11'
+      Content-Length:
+      - '485'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"corporation_name":"Caldari Provisions","ticker":"CP","member_count":236030,"ceo_id":3004073,"corporation_description":"Caldari
+        Provisions is one of the companies that were created by war veterans of the
+        Gallente-Caldari War. Specializing in the distribution of supply and logistics,
+        Caldari Provisions have carved themselves a nice little niche within the Caldari
+        State and are looking towards expanding their operation in other empires.","tax_rate":0.11,"creator_id":1,"url":"None"}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:12:49 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v2/characters/810699209/wallet/journal/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer mFprwstkZC9XhBsvpkcY8fDT7bgRg48RAqo3JB6UiYJuCCPFSosQMNKq2mV2oOkl4DUBtB9zddnrWLG4MsOxyQ2
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:12:49 GMT
+      Expires:
+      - Fri, 23 Mar 2018 10:35:35 GMT
+      Last-Modified:
+      - Fri, 23 Mar 2018 09:35:35 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      Warning:
+      - 299 - This endpoint is deprecated.
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '11'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '[{"date":"2018-03-21T22:11:25Z","ref_id":15320930223,"ref_type":"bounty_prizes","first_party_id":1000125,"first_party_type":"corporation","second_party_id":810699209,"second_party_type":"character","amount":359616.07,"balance":5194870641.5114,"reason":"24064:
+        1,24063: 1,24071: 1","tax":44446.93,"extra_info":{"system_id":30045324}},{"date":"2018-03-21T22:02:05Z","ref_id":15320902760,"ref_type":"agent_mission_time_bonus_reward","first_party_id":3019286,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":310610.0,"balance":5194511025.4414,"reason":"","tax":38390.0,"extra_info":{"character_id":3019286}},{"date":"2018-03-21T22:02:05Z","ref_id":15320902759,"ref_type":"agent_mission_reward","first_party_id":3019286,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":336420.0,"balance":5194200415.4414,"reason":"","tax":41580.0,"extra_info":{"character_id":3019286}},{"date":"2018-03-21T21:27:49Z","ref_id":15320794227,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-7309149.12,"balance":5193863995.4414},{"date":"2018-03-21T21:27:13Z","ref_id":15320792584,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-31491999.95,"balance":5201173144.5614},{"date":"2018-03-21T21:26:52Z","ref_id":15320791557,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-274991.97,"balance":5232665144.5114},{"date":"2018-03-21T21:26:38Z","ref_id":15320790780,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-1043997.89,"balance":5232940136.4814},{"date":"2018-03-21T21:25:55Z","ref_id":15320787814,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-887304.97,"balance":5233984134.3714},{"date":"2018-03-21T21:24:11Z","ref_id":15320782847,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-11959999.32,"balance":5234871439.3414},{"date":"2018-03-21T21:24:02Z","ref_id":15320782511,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-196003602.2,"balance":5246831438.6614},{"date":"2018-03-21T21:23:42Z","ref_id":15320781758,"ref_type":"market_escrow","first_party_id":810699209,"first_party_type":"character","amount":-44999999.98,"balance":5442835040.8614},{"date":"2018-03-21T21:12:44Z","ref_id":15320748209,"ref_type":"contract_brokers_fee","amount":-10000.0,"balance":5487835040.8414,"extra_info":{"contract_id":130160453}},{"date":"2018-03-21T20:31:24Z","ref_id":15320614172,"ref_type":"bounty_prizes","first_party_id":1000125,"first_party_type":"corporation","second_party_id":810699209,"second_party_type":"character","amount":1318036.6,"balance":5487845040.8414,"reason":"16982:
+        11,16986: 4,16989: 3,23971: 3,16998: 3,17001: 4,17003: 2,17004: 5,23985: 1,23986:
+        4,23987: 7,23988: 4,17598: 4","tax":162903.4,"extra_info":{"system_id":30001434}},{"date":"2018-03-21T20:31:24Z","ref_id":15320614170,"ref_type":"bounty_prizes","first_party_id":1000125,"first_party_type":"corporation","second_party_id":810699209,"second_party_type":"character","amount":159366.96,"balance":5486527004.2414,"reason":"23984:
+        1,23985: 2,17003: 1,23971: 2,16998: 1","tax":19697.04,"extra_info":{"system_id":30001433}},{"date":"2018-03-21T20:11:23Z","ref_id":15320546729,"ref_type":"bounty_prizes","first_party_id":1000125,"first_party_type":"corporation","second_party_id":810699209,"second_party_type":"character","amount":2098735.7,"balance":5486367637.2814,"reason":"16982:
+        12,16986: 8,16989: 7,23971: 4,16998: 5,17001: 2,17003: 2,17004: 14,17006:
+        3,23984: 3,23985: 2,23986: 7,23987: 5,23988: 8,17598: 8","tax":259394.3,"extra_info":{"system_id":30001433}},{"date":"2018-03-21T19:21:49Z","ref_id":15320378105,"ref_type":"agent_mission_time_bonus_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":189570.0,"balance":5484268901.5814,"reason":"","tax":23430.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-21T19:21:49Z","ref_id":15320378104,"ref_type":"agent_mission_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":181560.0,"balance":5484079331.5814,"reason":"","tax":22440.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-21T19:21:42Z","ref_id":15320377560,"ref_type":"repair_bill","first_party_id":810699209,"first_party_type":"character","second_party_id":1000021,"second_party_type":"corporation","amount":-19737.0,"balance":5483897771.5814,"extra_info":{}},{"date":"2018-03-21T19:15:19Z","ref_id":15320354915,"ref_type":"agent_mission_time_bonus_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":220720.0,"balance":5483917508.5814,"reason":"","tax":27280.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-21T19:15:19Z","ref_id":15320354914,"ref_type":"agent_mission_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":287470.0,"balance":5483696788.5814,"reason":"","tax":35530.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-21T19:12:20Z","ref_id":15320345558,"ref_type":"agent_mission_time_bonus_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":557140.0,"balance":5483409318.5814,"reason":"","tax":68860.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-21T19:12:20Z","ref_id":15320345557,"ref_type":"agent_mission_reward","first_party_id":3017709,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":509080.0,"balance":5482852178.5814,"reason":"","tax":62920.0,"extra_info":{"character_id":3017709}},{"date":"2018-03-20T21:45:43Z","ref_id":15317774255,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5482343098.5814,"extra_info":{"location_id":61000611}},{"date":"2018-03-20T20:18:44Z","ref_id":15317515655,"ref_type":"player_donation","first_party_id":810699209,"first_party_type":"character","second_party_id":93131435,"second_party_type":"character","amount":-10000000.0,"balance":5482343098.5814},{"date":"2018-03-20T20:03:39Z","ref_id":15317469461,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5492343098.5814,"extra_info":{"location_id":1027035688957}},{"date":"2018-03-15T20:33:05Z","ref_id":15299671121,"ref_type":"jump_clone_activation_fee","first_party_id":810699209,"first_party_type":"character","second_party_id":98526052,"second_party_type":"corporation","amount":0.0,"balance":5492343098.5814},{"date":"2018-03-13T22:19:48Z","ref_id":15293260623,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5492343098.5814,"extra_info":{"location_id":1027035688957}},{"date":"2018-03-13T22:02:17Z","ref_id":15293213417,"ref_type":"player_donation","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":-2000000.0,"balance":5492343098.5814},{"date":"2018-03-13T21:53:50Z","ref_id":15293187645,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5494343098.5814,"extra_info":{"location_id":61000770}},{"date":"2018-03-13T21:48:17Z","ref_id":15293171601,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5494343098.5814,"extra_info":{"location_id":61000770}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167041,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-22971.0,"balance":5494343098.5814},{"date":"2018-03-13T21:46:41Z","ref_id":15293167040,"ref_type":"market_transaction","amount":1148550.0,"balance":5494366069.5814,"extra_info":{"transaction_id":4831829886}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167037,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-74784.6,"balance":5493217519.5814},{"date":"2018-03-13T21:46:41Z","ref_id":15293167036,"ref_type":"market_transaction","amount":3739230.0,"balance":5493292304.1814,"extra_info":{"transaction_id":4831829885}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167034,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-14487.7766,"balance":5489553074.1814},{"date":"2018-03-13T21:46:41Z","ref_id":15293167033,"ref_type":"market_transaction","amount":724388.83,"balance":5489567561.958,"extra_info":{"transaction_id":4831829884}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167032,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-229084.9652,"balance":5488843173.128},{"date":"2018-03-13T21:46:41Z","ref_id":15293167031,"ref_type":"market_transaction","amount":11454248.26,"balance":5489072258.0932,"extra_info":{"transaction_id":4831829883}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167028,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-21814.1982,"balance":5477618009.8332},{"date":"2018-03-13T21:46:41Z","ref_id":15293167027,"ref_type":"market_transaction","amount":1090709.91,"balance":5477639824.0314,"extra_info":{"transaction_id":4831829882}},{"date":"2018-03-13T21:46:41Z","ref_id":15293167026,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-151840.4,"balance":5476549114.1214},{"date":"2018-03-13T21:46:41Z","ref_id":15293167025,"ref_type":"market_transaction","amount":7592020.0,"balance":5476700954.5214,"extra_info":{"transaction_id":4831829881}},{"date":"2018-03-13T21:46:20Z","ref_id":15293166162,"ref_type":"reprocessing_tax","amount":0.0,"balance":5469108934.5214},{"date":"2018-03-13T21:45:59Z","ref_id":15293165351,"ref_type":"reprocessing_tax","amount":0.0,"balance":5469108934.5214},{"date":"2018-03-13T21:45:23Z","ref_id":15293163285,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-22.671,"balance":5469108934.5214},{"date":"2018-03-13T21:45:23Z","ref_id":15293163284,"ref_type":"market_transaction","amount":1133.55,"balance":5469108957.1924,"extra_info":{"transaction_id":4831829367}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162129,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-37115.0,"balance":5469107823.6424},{"date":"2018-03-13T21:45:06Z","ref_id":15293162128,"ref_type":"market_transaction","amount":1855750.0,"balance":5469144938.6424,"extra_info":{"transaction_id":4831829240}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162126,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-104873.4,"balance":5467289188.6424},{"date":"2018-03-13T21:45:06Z","ref_id":15293162125,"ref_type":"market_transaction","amount":5243670.0,"balance":5467394062.0424,"extra_info":{"transaction_id":4831829239}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162122,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-78790.2896,"balance":5462150392.0424},{"date":"2018-03-13T21:45:06Z","ref_id":15293162121,"ref_type":"market_transaction","amount":3939514.48,"balance":5462229182.332,"extra_info":{"transaction_id":4831829238}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162120,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-309267.4546,"balance":5458289667.852},{"date":"2018-03-13T21:45:06Z","ref_id":15293162119,"ref_type":"market_transaction","amount":15463372.73,"balance":5458598935.3066,"extra_info":{"transaction_id":4831829237}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162117,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-34817.3172,"balance":5443135562.5766},{"date":"2018-03-13T21:45:06Z","ref_id":15293162116,"ref_type":"market_transaction","amount":1740865.86,"balance":5443170379.8938,"extra_info":{"transaction_id":4831829236}},{"date":"2018-03-13T21:45:06Z","ref_id":15293162113,"ref_type":"transaction_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000132,"second_party_type":"corporation","amount":-148170.72,"balance":5441429514.0338},{"date":"2018-03-13T21:45:06Z","ref_id":15293162112,"ref_type":"market_transaction","amount":7408536.0,"balance":5441577684.7538,"extra_info":{"transaction_id":4831829235}},{"date":"2018-03-13T21:43:27Z","ref_id":15293157295,"ref_type":"asset_safety_recovery_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000125,"second_party_type":"corporation","amount":-426.0,"balance":5434169148.7538,"extra_info":{}},{"date":"2018-03-13T21:43:21Z","ref_id":15293157030,"ref_type":"asset_safety_recovery_tax","first_party_id":810699209,"first_party_type":"character","second_party_id":1000125,"second_party_type":"corporation","amount":-1010681.0,"balance":5434169574.7538,"extra_info":{}},{"date":"2018-03-13T21:34:58Z","ref_id":15293129812,"ref_type":"player_donation","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":-60000000.0,"balance":5435180255.7538},{"date":"2018-03-13T20:49:19Z","ref_id":15292979646,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495180255.7538,"extra_info":{"location_id":1027035688957}},{"date":"2018-03-13T19:35:55Z","ref_id":15292725606,"ref_type":"jump_clone_activation_fee","first_party_id":810699209,"first_party_type":"character","second_party_id":98526052,"second_party_type":"corporation","amount":0.0,"balance":5495180255.7538},{"date":"2018-03-13T18:42:32Z","ref_id":15292543015,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495180255.7538,"extra_info":{"location_id":1027035688957}},{"date":"2018-03-13T18:41:55Z","ref_id":15292540859,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495180255.7538,"extra_info":{"location_id":1027035688957}},{"date":"2018-03-13T18:29:40Z","ref_id":15292495352,"ref_type":"clone_transfer","first_party_id":810699209,"first_party_type":"character","second_party_id":637427116,"second_party_type":"corporation","amount":-100000.0,"balance":5495180255.7538,"extra_info":{}},{"date":"2018-03-13T18:12:16Z","ref_id":15292434556,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495280255.7538,"extra_info":{"location_id":61000930}},{"date":"2018-03-13T18:11:26Z","ref_id":15292432125,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495280255.7538,"extra_info":{"location_id":61000930}},{"date":"2018-03-13T18:05:17Z","ref_id":15292409104,"ref_type":"player_trading","first_party_id":810699209,"first_party_type":"character","second_party_id":93273990,"second_party_type":"character","amount":0.0,"balance":5495280255.7538,"extra_info":{"location_id":61000930}},{"date":"2018-03-13T17:57:24Z","ref_id":15292382506,"ref_type":"player_donation","first_party_id":93131435,"first_party_type":"character","second_party_id":810699209,"second_party_type":"character","amount":3075433894.0,"balance":5495280255.7538},{"date":"2018-03-13T17:30:44Z","ref_id":15292293473,"ref_type":"player_donation","first_party_id":810699209,"first_party_type":"character","second_party_id":93131435,"second_party_type":"character","amount":-2848000000.0,"balance":2419846361.7538}]'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:12:49 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/24064/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":24064,"name":"Corelum Chief Sentinel","description":"This
+        is a fighter for the Serpentis Corporation. It is protecting the assets of
+        the Serpentis Corporation and may attack anyone it perceives as a threat or
+        easy pickings. Threat level: Deadly","published":false,"group_id":631,"radius":150.0,"volume":112000.0,"packaged_volume":112000.0,"capacity":480.0,"portion_size":1,"mass":11200000.0,"graphic_id":1815,"dogma_attributes":[{"attribute_id":192,"value":1.0},{"attribute_id":4,"value":11200000.0},{"attribute_id":854,"value":1.0},{"attribute_id":263,"value":1200.0},{"attribute_id":264,"value":0.0},{"attribute_id":9,"value":1800.0},{"attribute_id":267,"value":0.51},{"attribute_id":268,"value":0.41},{"attribute_id":269,"value":0.71},{"attribute_id":270,"value":0.61},{"attribute_id":271,"value":0.51},{"attribute_id":272,"value":0.41},{"attribute_id":273,"value":0.71},{"attribute_id":274,"value":0.61},{"attribute_id":665,"value":12000.0},{"attribute_id":265,"value":1500.0},{"attribute_id":158,"value":3000.0},{"attribute_id":581,"value":0.2},{"attribute_id":160,"value":0.1},{"attribute_id":161,"value":112000.0},{"attribute_id":162,"value":150.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":480.0},{"attribute_id":552,"value":150.0},{"attribute_id":630,"value":10000.0},{"attribute_id":1650,"value":1.0},{"attribute_id":562,"value":0.009},{"attribute_id":51,"value":3000.0},{"attribute_id":564,"value":250.0},{"attribute_id":798,"value":1.0},{"attribute_id":54,"value":5250.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":245,"value":568.0},{"attribute_id":64,"value":6.0},{"attribute_id":193,"value":1.0},{"attribute_id":580,"value":10000.0},{"attribute_id":118,"value":14.0},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":5.0},{"attribute_id":631,"value":210.0},{"attribute_id":525,"value":1.0},{"attribute_id":210,"value":17.0},{"attribute_id":416,"value":6000.0},{"attribute_id":563,"value":5.0},{"attribute_id":18,"value":0.0},{"attribute_id":217,"value":394.0},{"attribute_id":475,"value":4875.0},{"attribute_id":476,"value":19500.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":79688.0},{"attribute_id":482,"value":825.0},{"attribute_id":484,"value":0.75},{"attribute_id":1766,"value":26.0},{"attribute_id":508,"value":180.0},{"attribute_id":620,"value":125.0},{"attribute_id":466,"value":0.6},{"attribute_id":1648,"value":1.0},{"attribute_id":497,"value":0.05},{"attribute_id":1010,"value":0.49},{"attribute_id":1651,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":117,"value":8.0},{"attribute_id":246,"value":394.0},{"attribute_id":247,"value":18000.0},{"attribute_id":1656,"value":0.7},{"attribute_id":250,"value":1.0},{"attribute_id":1855,"value":50.0},{"attribute_id":252,"value":0.06875},{"attribute_id":524,"value":0.75}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2196,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/631/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '302'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":631,"name":"Deadspace Serpentis Cruiser","published":false,"category_id":11,"types":[11720,14347,16168,17033,17039,17042,17044,17045,17046,17047,17048,17055,17056,17110,17111,17112,17114,17123,17124,17125,17127,24063,24064,24065,24066,24067,24068,24069,24070,24071,24072,24073,24074,32192]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/24063/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":24063,"name":"Corelum Chief Infantry","description":"This
+        is a fighter for the Serpentis Corporation. It is protecting the assets of
+        the Serpentis Corporation and may attack anyone it perceives as a threat or
+        easy pickings. Threat level: Deadly","published":false,"group_id":631,"radius":150.0,"volume":112000.0,"packaged_volume":112000.0,"capacity":480.0,"portion_size":1,"mass":11200000.0,"graphic_id":1815,"dogma_attributes":[{"attribute_id":192,"value":1.0},{"attribute_id":4,"value":11200000.0},{"attribute_id":854,"value":1.0},{"attribute_id":263,"value":1200.0},{"attribute_id":264,"value":0.0},{"attribute_id":9,"value":1800.0},{"attribute_id":267,"value":0.52},{"attribute_id":268,"value":0.42},{"attribute_id":269,"value":0.72},{"attribute_id":270,"value":0.62},{"attribute_id":271,"value":0.52},{"attribute_id":272,"value":0.42},{"attribute_id":273,"value":0.72},{"attribute_id":274,"value":0.62},{"attribute_id":665,"value":34500.0},{"attribute_id":265,"value":1500.0},{"attribute_id":158,"value":12000.0},{"attribute_id":581,"value":0.1},{"attribute_id":160,"value":0.023},{"attribute_id":161,"value":112000.0},{"attribute_id":162,"value":150.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":480.0},{"attribute_id":552,"value":150.0},{"attribute_id":630,"value":10000.0},{"attribute_id":1650,"value":1.0},{"attribute_id":562,"value":0.009},{"attribute_id":51,"value":3500.0},{"attribute_id":564,"value":250.0},{"attribute_id":798,"value":1.0},{"attribute_id":54,"value":20000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":245,"value":12344.0},{"attribute_id":64,"value":6.65},{"attribute_id":193,"value":1.0},{"attribute_id":580,"value":10000.0},{"attribute_id":118,"value":14.0},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":5.0},{"attribute_id":631,"value":200.0},{"attribute_id":525,"value":1.0},{"attribute_id":210,"value":17.0},{"attribute_id":416,"value":23000.0},{"attribute_id":563,"value":5.0},{"attribute_id":18,"value":0.0},{"attribute_id":217,"value":394.0},{"attribute_id":475,"value":4950.0},{"attribute_id":476,"value":19800.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":76875.0},{"attribute_id":482,"value":800.0},{"attribute_id":484,"value":0.75},{"attribute_id":1766,"value":26.0},{"attribute_id":508,"value":180.0},{"attribute_id":620,"value":125.0},{"attribute_id":466,"value":0.59},{"attribute_id":1648,"value":1.0},{"attribute_id":497,"value":0.045},{"attribute_id":1010,"value":0.48},{"attribute_id":1651,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":117,"value":8.0},{"attribute_id":246,"value":394.0},{"attribute_id":247,"value":57500.0},{"attribute_id":1656,"value":0.7},{"attribute_id":250,"value":1.0},{"attribute_id":1855,"value":50.0},{"attribute_id":252,"value":0.0675},{"attribute_id":524,"value":0.75}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2196,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/631/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '302'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":631,"name":"Deadspace Serpentis Cruiser","published":false,"category_id":11,"types":[11720,14347,16168,17033,17039,17042,17044,17045,17046,17047,17048,17055,17056,17110,17111,17112,17114,17123,17124,17125,17127,24063,24064,24065,24066,24067,24068,24069,24070,24071,24072,24073,24074,32192]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/24071/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":24071,"name":"Corelum Guardian Chief Defender","description":"This
+        is a fighter for the Serpentis Corporation. It is protecting the assets of
+        the Serpentis Corporation and may attack anyone it perceives as a threat or
+        easy pickings. Threat level: Deadly","published":false,"group_id":631,"radius":150.0,"volume":112000.0,"packaged_volume":112000.0,"capacity":480.0,"portion_size":1,"mass":11200000.0,"graphic_id":1815,"dogma_attributes":[{"attribute_id":192,"value":1.0},{"attribute_id":4,"value":11200000.0},{"attribute_id":854,"value":1.0},{"attribute_id":263,"value":1200.0},{"attribute_id":264,"value":0.0},{"attribute_id":9,"value":1800.0},{"attribute_id":267,"value":0.15},{"attribute_id":268,"value":0.1},{"attribute_id":269,"value":0.28},{"attribute_id":270,"value":0.21},{"attribute_id":271,"value":0.15},{"attribute_id":272,"value":0.1},{"attribute_id":273,"value":0.28},{"attribute_id":274,"value":0.21},{"attribute_id":665,"value":43125.0},{"attribute_id":265,"value":1500.0},{"attribute_id":158,"value":15000.0},{"attribute_id":581,"value":0.175},{"attribute_id":160,"value":0.023},{"attribute_id":161,"value":112000.0},{"attribute_id":162,"value":150.0},{"attribute_id":37,"value":320.0},{"attribute_id":38,"value":480.0},{"attribute_id":552,"value":140.0},{"attribute_id":630,"value":10000.0},{"attribute_id":1650,"value":1.0},{"attribute_id":562,"value":0.009},{"attribute_id":51,"value":3500.0},{"attribute_id":564,"value":260.0},{"attribute_id":798,"value":1.0},{"attribute_id":54,"value":25000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":245,"value":570.0},{"attribute_id":64,"value":8.0},{"attribute_id":193,"value":1.0},{"attribute_id":580,"value":10000.0},{"attribute_id":118,"value":12.0},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":456,"value":-4.0},{"attribute_id":457,"value":6.0},{"attribute_id":631,"value":280.0},{"attribute_id":525,"value":1.0},{"attribute_id":210,"value":18.0},{"attribute_id":416,"value":28750.0},{"attribute_id":563,"value":5.0},{"attribute_id":18,"value":0.0},{"attribute_id":217,"value":394.0},{"attribute_id":475,"value":4200.0},{"attribute_id":476,"value":16800.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":247500.0},{"attribute_id":482,"value":1150.0},{"attribute_id":484,"value":0.75},{"attribute_id":1766,"value":26.0},{"attribute_id":508,"value":160.0},{"attribute_id":620,"value":125.0},{"attribute_id":466,"value":0.73},{"attribute_id":1648,"value":1.0},{"attribute_id":497,"value":0.135},{"attribute_id":1010,"value":0.56},{"attribute_id":1651,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":117,"value":8.0},{"attribute_id":246,"value":394.0},{"attribute_id":247,"value":71875.0},{"attribute_id":1656,"value":0.7},{"attribute_id":250,"value":1.0},{"attribute_id":1855,"value":25.0},{"attribute_id":252,"value":0.105},{"attribute_id":524,"value":0.75}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2196,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/631/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '302'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":631,"name":"Deadspace Serpentis Cruiser","published":false,"category_id":11,"types":[11720,14347,16168,17033,17039,17042,17044,17045,17046,17047,17048,17055,17056,17110,17111,17112,17114,17123,17124,17125,17127,24063,24064,24065,24066,24067,24068,24069,24070,24071,24072,24073,24074,32192]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/16982/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":16982,"name":"Pithum Ascriber","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Deadly","published":false,"group_id":613,"radius":150.0,"volume":96000.0,"packaged_volume":96000.0,"capacity":450.0,"portion_size":1,"mass":9600000.0,"graphic_id":1826,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":9600000.0},{"attribute_id":9,"value":725.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":542,"value":20.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":450.0},{"attribute_id":552,"value":115.0},{"attribute_id":562,"value":0.0045},{"attribute_id":51,"value":2500.0},{"attribute_id":564,"value":270.0},{"attribute_id":54,"value":10000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":64,"value":4.291666667},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.1},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":6000.0},{"attribute_id":103,"value":17500.0},{"attribute_id":105,"value":1.0},{"attribute_id":620,"value":125.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":8.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":65.0},{"attribute_id":638,"value":0.41},{"attribute_id":639,"value":0.41},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.553},{"attribute_id":646,"value":1.553},{"attribute_id":661,"value":2000.0},{"attribute_id":662,"value":0.25},{"attribute_id":665,"value":17250.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.042},{"attribute_id":161,"value":96000.0},{"attribute_id":162,"value":150.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":3.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":6.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":16.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":26.0},{"attribute_id":245,"value":568.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":28750.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.0525},{"attribute_id":263,"value":900.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":700.0},{"attribute_id":267,"value":0.49},{"attribute_id":268,"value":0.59},{"attribute_id":269,"value":0.79},{"attribute_id":270,"value":0.69},{"attribute_id":271,"value":0.49},{"attribute_id":272,"value":0.59},{"attribute_id":273,"value":0.79},{"attribute_id":274,"value":0.69},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.8894},{"attribute_id":859,"value":1.2212},{"attribute_id":416,"value":11500.0},{"attribute_id":456,"value":-4.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.52},{"attribute_id":475,"value":5475.0},{"attribute_id":476,"value":21900.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":43125.0},{"attribute_id":482,"value":625.0},{"attribute_id":484,"value":0.75},{"attribute_id":1007,"value":0.41},{"attribute_id":497,"value":0.005},{"attribute_id":1010,"value":0.41},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":209.0},{"attribute_id":508,"value":180.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2193,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/613/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '301'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":613,"name":"Deadspace Guristas Cruiser","published":false,"category_id":11,"types":[11601,11718,14344,16169,16980,16982,16991,16995,16998,17000,17003,17004,17007,17009,17016,17017,17020,17021,17024,17025,17028,17029,24087,24088,24089,24090,24091,24092,24093,24094,24095,24096,24097,24098]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/16986/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":16986,"name":"Pithi Demolisher","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":615,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":1831,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":440.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":38.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":3500.0},{"attribute_id":564,"value":600.0},{"attribute_id":54,"value":10000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":4.175},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.05},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":6.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.24},{"attribute_id":639,"value":0.24},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.184},{"attribute_id":646,"value":1.184},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":17250.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.07},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":12.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":10678.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":28750.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.015},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.61},{"attribute_id":268,"value":0.71},{"attribute_id":269,"value":0.91},{"attribute_id":270,"value":0.81},{"attribute_id":271,"value":0.61},{"attribute_id":272,"value":0.71},{"attribute_id":273,"value":0.91},{"attribute_id":274,"value":0.81},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9632},{"attribute_id":859,"value":1.0736},{"attribute_id":416,"value":11500.0},{"attribute_id":1009,"value":0.24},{"attribute_id":456,"value":-5.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.34},{"attribute_id":475,"value":6825.0},{"attribute_id":476,"value":27300.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":9000.0},{"attribute_id":482,"value":160.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.24},{"attribute_id":497,"value":0.0},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":220.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/615/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '307'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":615,"name":"Deadspace Guristas Frigate","published":false,"category_id":11,"types":[16565,16566,16981,16983,16985,16986,16987,16989,16990,16993,16994,16996,16997,16999,17001,17002,17006,17008,17012,17013,17015,17019,17022,17023,17026,17027,17032,24045,24046,24047,24048,24049,24050,25825,32391]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:45 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/16989/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":16989,"name":"Pithi Destructor","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":615,"radius":50.0,"volume":19700.0,"packaged_volume":19700.0,"capacity":235.0,"portion_size":1,"mass":1970000.0,"graphic_id":1830,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":1970000.0},{"attribute_id":9,"value":200.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":440.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":38.0},{"attribute_id":562,"value":0.003},{"attribute_id":51,"value":3500.0},{"attribute_id":564,"value":600.0},{"attribute_id":54,"value":10000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":2.75},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.05},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":3000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":6.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":30.0},{"attribute_id":638,"value":0.23},{"attribute_id":639,"value":0.23},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.1635},{"attribute_id":646,"value":1.1635},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":17250.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.07},{"attribute_id":161,"value":19700.0},{"attribute_id":162,"value":50.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":12.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":10678.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":28750.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.01375},{"attribute_id":263,"value":275.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":200.0},{"attribute_id":267,"value":0.62},{"attribute_id":268,"value":0.72},{"attribute_id":269,"value":0.92},{"attribute_id":270,"value":0.82},{"attribute_id":271,"value":0.62},{"attribute_id":272,"value":0.72},{"attribute_id":273,"value":0.92},{"attribute_id":274,"value":0.82},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9673},{"attribute_id":859,"value":1.0654},{"attribute_id":416,"value":11500.0},{"attribute_id":1009,"value":0.23},{"attribute_id":456,"value":-5.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.33},{"attribute_id":475,"value":6900.0},{"attribute_id":476,"value":27600.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":8250.0},{"attribute_id":482,"value":150.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.23},{"attribute_id":497,"value":0.0},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":20000.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":220.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":569,"is_default":false},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/615/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '307'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '1'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":615,"name":"Deadspace Guristas Frigate","published":false,"category_id":11,"types":[16565,16566,16981,16983,16985,16986,16987,16989,16990,16993,16994,16996,16997,16999,17001,17002,17006,17008,17012,17013,17015,17019,17022,17023,17026,17027,17032,24045,24046,24047,24048,24049,24050,25825,32391]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23971/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23971,"name":"Pithior Nihilist","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2500.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":11250.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":4.016666667},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":5.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.2045},{"attribute_id":646,"value":1.2045},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":18750.0},{"attribute_id":158,"value":5000.0},{"attribute_id":160,"value":0.085},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":13.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":10678.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":31250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.0175},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9591},{"attribute_id":859,"value":1.0818},{"attribute_id":416,"value":12500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.35},{"attribute_id":475,"value":6750.0},{"attribute_id":476,"value":27000.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":11250.0},{"attribute_id":482,"value":170.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/16998/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":16998,"name":"Pithum Nullifier","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Deadly","published":false,"group_id":613,"radius":150.0,"volume":101000.0,"packaged_volume":101000.0,"capacity":235.0,"portion_size":1,"mass":10100000.0,"graphic_id":1824,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":10100000.0},{"attribute_id":9,"value":1100.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":205.0},{"attribute_id":562,"value":0.007},{"attribute_id":51,"value":2750.0},{"attribute_id":564,"value":200.0},{"attribute_id":54,"value":15000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":64,"value":2.75},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.1},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":6000.0},{"attribute_id":103,"value":7500.0},{"attribute_id":105,"value":1.0},{"attribute_id":620,"value":125.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":10.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":85.0},{"attribute_id":638,"value":0.45},{"attribute_id":639,"value":0.45},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.635},{"attribute_id":646,"value":1.635},{"attribute_id":661,"value":2000.0},{"attribute_id":662,"value":0.25},{"attribute_id":665,"value":26250.0},{"attribute_id":158,"value":10000.0},{"attribute_id":160,"value":0.028},{"attribute_id":161,"value":101000.0},{"attribute_id":162,"value":150.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":3.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":8.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":26.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":26.0},{"attribute_id":238,"value":2.0},{"attribute_id":239,"value":2.0},{"attribute_id":240,"value":2.0},{"attribute_id":241,"value":2.0},{"attribute_id":245,"value":567.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":100000.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.06125},{"attribute_id":263,"value":1500.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":1050.0},{"attribute_id":267,"value":0.45},{"attribute_id":268,"value":0.55},{"attribute_id":269,"value":0.75},{"attribute_id":270,"value":0.65},{"attribute_id":271,"value":0.45},{"attribute_id":272,"value":0.55},{"attribute_id":273,"value":0.75},{"attribute_id":274,"value":0.65},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.873},{"attribute_id":859,"value":1.254},{"attribute_id":416,"value":17500.0},{"attribute_id":929,"value":20000.0},{"attribute_id":930,"value":1.0},{"attribute_id":936,"value":50000.0},{"attribute_id":928,"value":0.0},{"attribute_id":456,"value":-5.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.56},{"attribute_id":475,"value":5175.0},{"attribute_id":476,"value":20700.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":62813.0},{"attribute_id":482,"value":725.0},{"attribute_id":484,"value":0.75},{"attribute_id":1007,"value":0.45},{"attribute_id":497,"value":0.015},{"attribute_id":1010,"value":0.45},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":12500.0},{"attribute_id":507,"value":209.0},{"attribute_id":508,"value":180.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":569,"is_default":false},{"effect_id":2193,"is_default":false},{"effect_id":6695,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/613/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '301'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '1'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":613,"name":"Deadspace Guristas Cruiser","published":false,"category_id":11,"types":[11601,11718,14344,16169,16980,16982,16991,16995,16998,17000,17003,17004,17007,17009,17016,17017,17020,17021,17024,17025,17028,17029,24087,24088,24089,24090,24091,24092,24093,24094,24095,24096,24097,24098]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/17001/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":17001,"name":"Pithi Plunderer","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: High","published":false,"group_id":615,"radius":50.0,"volume":19700.0,"packaged_volume":19700.0,"capacity":125.0,"portion_size":1,"mass":1970000.0,"graphic_id":1830,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":1970000.0},{"attribute_id":9,"value":150.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":542,"value":9.0},{"attribute_id":37,"value":440.0},{"attribute_id":38,"value":125.0},{"attribute_id":552,"value":38.0},{"attribute_id":562,"value":0.0025},{"attribute_id":563,"value":5.0},{"attribute_id":564,"value":600.0},{"attribute_id":55,"value":500000.0},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.05},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":3000.0},{"attribute_id":103,"value":0.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":25.0},{"attribute_id":638,"value":0.21},{"attribute_id":639,"value":0.21},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.1225},{"attribute_id":646,"value":1.1225},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":7000.0},{"attribute_id":161,"value":19700.0},{"attribute_id":162,"value":50.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":11.0},{"attribute_id":212,"value":2.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":5500.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.0125},{"attribute_id":263,"value":225.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":175.0},{"attribute_id":267,"value":0.64},{"attribute_id":268,"value":0.74},{"attribute_id":269,"value":0.94},{"attribute_id":270,"value":0.84},{"attribute_id":271,"value":0.64},{"attribute_id":272,"value":0.74},{"attribute_id":273,"value":0.94},{"attribute_id":274,"value":0.84},{"attribute_id":798,"value":1.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":1.0},{"attribute_id":859,"value":1.049},{"attribute_id":416,"value":3500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.31},{"attribute_id":475,"value":7050.0},{"attribute_id":476,"value":28200.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":7500.0},{"attribute_id":482,"value":130.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.21},{"attribute_id":1009,"value":0.21},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":5000.0},{"attribute_id":507,"value":266.0},{"attribute_id":508,"value":220.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":569,"is_default":false},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/615/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '307'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '1'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":615,"name":"Deadspace Guristas Frigate","published":false,"category_id":11,"types":[16565,16566,16981,16983,16985,16986,16987,16989,16990,16993,16994,16996,16997,16999,17001,17002,17006,17008,17012,17013,17015,17019,17022,17023,17026,17027,17032,24045,24046,24047,24048,24049,24050,25825,32391]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/17003/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":17003,"name":"Pithum Annihilator","description":"This is
+        a fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Deadly","published":false,"group_id":613,"radius":150.0,"volume":101000.0,"packaged_volume":101000.0,"capacity":235.0,"portion_size":1,"mass":10100000.0,"graphic_id":1824,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":10100000.0},{"attribute_id":9,"value":1050.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":205.0},{"attribute_id":562,"value":0.006},{"attribute_id":51,"value":2750.0},{"attribute_id":564,"value":200.0},{"attribute_id":54,"value":15000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":64,"value":2.75},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.1},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":6000.0},{"attribute_id":620,"value":125.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":10.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":80.0},{"attribute_id":638,"value":0.44},{"attribute_id":639,"value":0.44},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.6145},{"attribute_id":646,"value":1.6145},{"attribute_id":661,"value":2000.0},{"attribute_id":662,"value":0.25},{"attribute_id":665,"value":26250.0},{"attribute_id":158,"value":10000.0},{"attribute_id":160,"value":0.028},{"attribute_id":161,"value":101000.0},{"attribute_id":162,"value":150.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":3.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":8.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":25.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":26.0},{"attribute_id":238,"value":2.0},{"attribute_id":239,"value":2.0},{"attribute_id":240,"value":2.0},{"attribute_id":241,"value":2.0},{"attribute_id":245,"value":567.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":45000.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.05875},{"attribute_id":263,"value":1400.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":1000.0},{"attribute_id":267,"value":0.46},{"attribute_id":268,"value":0.56},{"attribute_id":269,"value":0.76},{"attribute_id":270,"value":0.66},{"attribute_id":271,"value":0.46},{"attribute_id":272,"value":0.56},{"attribute_id":273,"value":0.76},{"attribute_id":274,"value":0.66},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.8771},{"attribute_id":859,"value":1.2458},{"attribute_id":416,"value":17500.0},{"attribute_id":929,"value":20000.0},{"attribute_id":930,"value":1.0},{"attribute_id":936,"value":50000.0},{"attribute_id":928,"value":0.0},{"attribute_id":456,"value":-5.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.55},{"attribute_id":475,"value":5250.0},{"attribute_id":476,"value":21000.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":57188.0},{"attribute_id":482,"value":700.0},{"attribute_id":484,"value":0.75},{"attribute_id":1007,"value":0.44},{"attribute_id":497,"value":0.0125},{"attribute_id":1010,"value":0.44},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":7500.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":180.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":569,"is_default":false},{"effect_id":2193,"is_default":false},{"effect_id":6695,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/613/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '301'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '1'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":613,"name":"Deadspace Guristas Cruiser","published":false,"category_id":11,"types":[11601,11718,14344,16169,16980,16982,16991,16995,16998,17000,17003,17004,17007,17009,17016,17017,17020,17021,17024,17025,17028,17029,24087,24088,24089,24090,24091,24092,24093,24094,24095,24096,24097,24098]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/17004/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":17004,"name":"Pithum Silencer","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Extreme","published":false,"group_id":613,"radius":150.0,"volume":107000.0,"packaged_volume":107000.0,"capacity":850.0,"portion_size":1,"mass":10700000.0,"graphic_id":1823,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":10700000.0},{"attribute_id":9,"value":700.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":542,"value":16.0},{"attribute_id":37,"value":360.0},{"attribute_id":38,"value":850.0},{"attribute_id":552,"value":115.0},{"attribute_id":562,"value":0.004},{"attribute_id":51,"value":2500.0},{"attribute_id":564,"value":270.0},{"attribute_id":54,"value":10000.0},{"attribute_id":55,"value":1000000.0},{"attribute_id":64,"value":3.75},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.1},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":6000.0},{"attribute_id":103,"value":15000.0},{"attribute_id":105,"value":1.0},{"attribute_id":620,"value":125.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":8.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":60.0},{"attribute_id":638,"value":0.4},{"attribute_id":639,"value":0.4},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.5325},{"attribute_id":646,"value":1.5325},{"attribute_id":661,"value":2000.0},{"attribute_id":662,"value":0.25},{"attribute_id":665,"value":17250.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.042},{"attribute_id":161,"value":107000.0},{"attribute_id":162,"value":150.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":3.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":6.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":16.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":26.0},{"attribute_id":245,"value":568.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":28750.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.05},{"attribute_id":263,"value":750.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":625.0},{"attribute_id":267,"value":0.5},{"attribute_id":268,"value":0.6},{"attribute_id":269,"value":0.8},{"attribute_id":270,"value":0.7},{"attribute_id":271,"value":0.5},{"attribute_id":272,"value":0.6},{"attribute_id":273,"value":0.8},{"attribute_id":274,"value":0.7},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.8935},{"attribute_id":859,"value":1.213},{"attribute_id":416,"value":11500.0},{"attribute_id":456,"value":-4.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.51},{"attribute_id":475,"value":5550.0},{"attribute_id":476,"value":22200.0},{"attribute_id":479,"value":1000000.0},{"attribute_id":481,"value":37500.0},{"attribute_id":482,"value":600.0},{"attribute_id":484,"value":0.75},{"attribute_id":1007,"value":0.4},{"attribute_id":497,"value":0.0025},{"attribute_id":1010,"value":0.4},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":180.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2193,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/613/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '301'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '1'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":613,"name":"Deadspace Guristas Cruiser","published":false,"category_id":11,"types":[11601,11718,14344,16169,16980,16982,16991,16995,16998,17000,17003,17004,17007,17009,17016,17017,17020,17021,17024,17025,17028,17029,24087,24088,24089,24090,24091,24092,24093,24094,24095,24096,24097,24098]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23985/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23985,"name":"Pithior Renegade","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2500.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":11250.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":4.805555556},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":5.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.2455},{"attribute_id":646,"value":1.2455},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":18750.0},{"attribute_id":158,"value":5000.0},{"attribute_id":160,"value":0.085},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":14.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":10678.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":31250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.01875},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9509},{"attribute_id":859,"value":1.0982},{"attribute_id":416,"value":12500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.37},{"attribute_id":475,"value":6600.0},{"attribute_id":476,"value":26400.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":12375.0},{"attribute_id":482,"value":190.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23986/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23986,"name":"Pithior Guerilla","description":"This is a
+        fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2750.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":15000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":5.45},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":6.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.266},{"attribute_id":646,"value":1.266},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":24750.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.07},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":14.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":565.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":41250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.02},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9468},{"attribute_id":859,"value":1.1064},{"attribute_id":416,"value":16500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.38},{"attribute_id":475,"value":6525.0},{"attribute_id":476,"value":26100.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":13500.0},{"attribute_id":482,"value":200.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23987/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23987,"name":"Pithior Terrorist","description":"This is
+        a fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2750.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":15000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":6.0},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":6.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.2865},{"attribute_id":646,"value":1.2865},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":24750.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.07},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":15.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":565.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":41250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.02125},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9427},{"attribute_id":859,"value":1.1146},{"attribute_id":416,"value":16500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-4.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.39},{"attribute_id":475,"value":6450.0},{"attribute_id":476,"value":25800.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":14625.0},{"attribute_id":482,"value":210.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23988/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23988,"name":"Pithior Supremacist","description":"This is
+        a fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2750.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":15000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":6.65},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":6.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.307},{"attribute_id":646,"value":1.307},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":24750.0},{"attribute_id":158,"value":6000.0},{"attribute_id":160,"value":0.07},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":15.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":565.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":41250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.0225},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.9386},{"attribute_id":859,"value":1.1228},{"attribute_id":416,"value":16500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-4.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.4},{"attribute_id":475,"value":6375.0},{"attribute_id":476,"value":25500.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":15750.0},{"attribute_id":482,"value":220.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/17598/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":17598,"name":"Guristas Heavy Missile Battery","description":"This
+        heavy missile sentry will launch missiles at any target it considers to be
+        a threat. ","published":false,"group_id":383,"radius":371.0,"volume":1000.0,"packaged_volume":1000.0,"capacity":1000.0,"portion_size":1,"mass":1000.0,"graphic_id":2468,"dogma_attributes":[{"attribute_id":192,"value":8.0},{"attribute_id":4,"value":1000.0},{"attribute_id":645,"value":1.5},{"attribute_id":6,"value":0.0},{"attribute_id":263,"value":500.0},{"attribute_id":264,"value":0.0},{"attribute_id":9,"value":800.0},{"attribute_id":267,"value":0.4},{"attribute_id":268,"value":0.9},{"attribute_id":269,"value":0.75},{"attribute_id":270,"value":0.65},{"attribute_id":272,"value":0.4},{"attribute_id":273,"value":0.6},{"attribute_id":274,"value":0.8},{"attribute_id":20,"value":-75.0},{"attribute_id":665,"value":0.0},{"attribute_id":154,"value":250000.0},{"attribute_id":265,"value":1600.0},{"attribute_id":158,"value":50000.0},{"attribute_id":160,"value":0.04},{"attribute_id":161,"value":1000.0},{"attribute_id":162,"value":371.0},{"attribute_id":646,"value":1.5},{"attribute_id":38,"value":1000.0},{"attribute_id":552,"value":150.0},{"attribute_id":1650,"value":1.0},{"attribute_id":51,"value":20000000.0},{"attribute_id":798,"value":1.0},{"attribute_id":54,"value":250000.0},{"attribute_id":55,"value":500000.0},{"attribute_id":1652,"value":1.0},{"attribute_id":416,"value":0.0},{"attribute_id":245,"value":372.0},{"attribute_id":64,"value":3.5},{"attribute_id":193,"value":3.0},{"attribute_id":182,"value":3373.0},{"attribute_id":525,"value":1.0},{"attribute_id":208,"value":100.0},{"attribute_id":209,"value":100.0},{"attribute_id":210,"value":100.0},{"attribute_id":211,"value":100.0},{"attribute_id":212,"value":3.0},{"attribute_id":854,"value":1.0},{"attribute_id":479,"value":500000.0},{"attribute_id":481,"value":40000.0},{"attribute_id":482,"value":1000.0},{"attribute_id":484,"value":0.75},{"attribute_id":620,"value":100.0},{"attribute_id":18,"value":0.0},{"attribute_id":1648,"value":1.0},{"attribute_id":497,"value":0.1},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":0.0},{"attribute_id":118,"value":0.0},{"attribute_id":247,"value":250000.0},{"attribute_id":1656,"value":0.5},{"attribute_id":506,"value":24000.0},{"attribute_id":507,"value":208.0},{"attribute_id":252,"value":0.0}],"dogma_effects":[{"effect_id":569,"is_default":true}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/383/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '1138'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":383,"name":"Destructible Sentry Gun","published":false,"category_id":11,"types":[13068,13113,13114,13115,13116,16739,16740,16741,16742,16743,16744,16745,16746,16747,17144,17145,17146,17147,17148,17149,17150,17151,17152,17153,17154,17155,17156,17157,17158,17159,17160,17161,17163,17164,17568,17569,17570,17571,17572,17573,17574,17575,17576,17577,17578,17579,17580,17581,17582,17583,17584,17585,17586,17587,17588,17589,17590,17591,17592,17593,17594,17595,17596,17597,17598,17599,17600,17601,17602,17603,17605,17606,17607,17608,17609,17610,17611,17612,17638,17875,17876,17877,17878,17879,17880,18000,18001,18023,18026,18027,18028,18031,18032,18033,18034,18035,19664,19665,19666,19667,19668,19669,19670,21744,21745,21746,21747,21748,21749,22848,24767,24772,25385,25626,25706,25817,25827,25840,26709,26747,26856,26857,26858,27280,27281,27282,27283,27284,27285,27668,27669,27670,27765,27792,27793,27794,27795,27796,27797,27798,27799,27800,27953,27954,27955,27956,28139,28140,28141,28142,28143,28144,28145,28146,28147,28148,28149,28150,28151,28152,28153,28571,28572,28573,28574,28575,30460,30461,30462,34437,34454,34455,34873,35663]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/23984/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":23984,"name":"Pithior Anarchist","description":"This is
+        a fighter for the Guristas. It is protecting the assets of Guristas and may
+        attack anyone it perceives as a threat or easy pickings. Threat level: Very
+        high","published":false,"group_id":614,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":235.0,"portion_size":1,"mass":1650000.0,"graphic_id":2920,"dogma_attributes":[{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":225.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":37,"value":400.0},{"attribute_id":38,"value":235.0},{"attribute_id":552,"value":89.0},{"attribute_id":562,"value":0.00325},{"attribute_id":51,"value":2500.0},{"attribute_id":564,"value":475.0},{"attribute_id":54,"value":11250.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":4.5},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.075},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":40.0},{"attribute_id":1648,"value":1.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":5.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":32.5},{"attribute_id":638,"value":0.25},{"attribute_id":639,"value":0.25},{"attribute_id":645,"value":1.225},{"attribute_id":646,"value":1.225},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":18750.0},{"attribute_id":158,"value":5000.0},{"attribute_id":160,"value":0.085},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":114,"value":0.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":5.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":13.0},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":245,"value":10678.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":31250.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.018125},{"attribute_id":263,"value":300.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":250.0},{"attribute_id":267,"value":0.6},{"attribute_id":268,"value":0.7},{"attribute_id":269,"value":0.9},{"attribute_id":270,"value":0.8},{"attribute_id":271,"value":0.6},{"attribute_id":272,"value":0.7},{"attribute_id":273,"value":0.9},{"attribute_id":274,"value":0.8},{"attribute_id":798,"value":1.0},{"attribute_id":563,"value":5.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":0.955},{"attribute_id":859,"value":1.09},{"attribute_id":416,"value":12500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":4.0},{"attribute_id":466,"value":0.36},{"attribute_id":475,"value":6675.0},{"attribute_id":476,"value":26700.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":11813.0},{"attribute_id":482,"value":180.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.25},{"attribute_id":1009,"value":0.25},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":1.0},{"attribute_id":507,"value":210.0},{"attribute_id":508,"value":200.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/614/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:46 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '14'
+      Content-Length:
+      - '171'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '0'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":614,"name":"Deadspace Guristas Destroyer","published":false,"category_id":11,"types":[23971,23984,23985,23986,23987,23988,24217,24218,24219,24220,24221,24222]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:46 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/universe/types/17006/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:47 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '13'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"type_id":17006,"name":"Pithi Wrecker","description":"This is a fighter
+        for the Guristas. It is protecting the assets of Guristas and may attack anyone
+        it perceives as a threat or easy pickings. Threat level: High","published":false,"group_id":615,"radius":50.0,"volume":16500.0,"packaged_volume":16500.0,"capacity":130.0,"portion_size":1,"mass":1650000.0,"graphic_id":1831,"dogma_attributes":[{"attribute_id":512,"value":0.0},{"attribute_id":513,"value":0.0},{"attribute_id":514,"value":0.0},{"attribute_id":4,"value":1650000.0},{"attribute_id":9,"value":200.0},{"attribute_id":524,"value":0.75},{"attribute_id":525,"value":1.0},{"attribute_id":18,"value":0.0},{"attribute_id":20,"value":0.0},{"attribute_id":542,"value":12.0},{"attribute_id":37,"value":440.0},{"attribute_id":38,"value":130.0},{"attribute_id":552,"value":38.0},{"attribute_id":562,"value":0.00275},{"attribute_id":563,"value":5.0},{"attribute_id":564,"value":600.0},{"attribute_id":55,"value":500000.0},{"attribute_id":64,"value":0.0},{"attribute_id":580,"value":10000.0},{"attribute_id":581,"value":0.05},{"attribute_id":582,"value":10000.0},{"attribute_id":583,"value":1.0},{"attribute_id":79,"value":2000.0},{"attribute_id":103,"value":0.0},{"attribute_id":620,"value":0.0},{"attribute_id":1648,"value":1.0},{"attribute_id":114,"value":0.0},{"attribute_id":1651,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":0.0},{"attribute_id":630,"value":10000.0},{"attribute_id":631,"value":0.0},{"attribute_id":1656,"value":0.7},{"attribute_id":636,"value":5000.0},{"attribute_id":637,"value":27.5},{"attribute_id":638,"value":0.22},{"attribute_id":639,"value":0.22},{"attribute_id":640,"value":1.0},{"attribute_id":645,"value":1.143},{"attribute_id":646,"value":1.143},{"attribute_id":661,"value":3000.0},{"attribute_id":662,"value":0.05},{"attribute_id":665,"value":7000.0},{"attribute_id":161,"value":16500.0},{"attribute_id":162,"value":50.0},{"attribute_id":1650,"value":1.0},{"attribute_id":1652,"value":1.0},{"attribute_id":192,"value":2.0},{"attribute_id":193,"value":1.0},{"attribute_id":118,"value":0.0},{"attribute_id":208,"value":0.0},{"attribute_id":209,"value":0.0},{"attribute_id":210,"value":0.0},{"attribute_id":211,"value":11.0},{"attribute_id":212,"value":2.13},{"attribute_id":217,"value":395.0},{"attribute_id":1766,"value":25.0},{"attribute_id":246,"value":395.0},{"attribute_id":247,"value":5750.0},{"attribute_id":250,"value":1.0},{"attribute_id":252,"value":0.013125},{"attribute_id":263,"value":250.0},{"attribute_id":264,"value":0.0},{"attribute_id":265,"value":200.0},{"attribute_id":267,"value":0.63},{"attribute_id":268,"value":0.73},{"attribute_id":269,"value":0.93},{"attribute_id":270,"value":0.83},{"attribute_id":271,"value":0.63},{"attribute_id":272,"value":0.73},{"attribute_id":273,"value":0.93},{"attribute_id":274,"value":0.83},{"attribute_id":798,"value":1.0},{"attribute_id":1855,"value":50.0},{"attribute_id":854,"value":1.0},{"attribute_id":858,"value":1.0},{"attribute_id":859,"value":1.0572},{"attribute_id":416,"value":3500.0},{"attribute_id":497,"value":0.0},{"attribute_id":456,"value":-6.0},{"attribute_id":457,"value":3.0},{"attribute_id":466,"value":0.32},{"attribute_id":475,"value":6975.0},{"attribute_id":476,"value":27900.0},{"attribute_id":479,"value":2000000.0},{"attribute_id":481,"value":7875.0},{"attribute_id":482,"value":140.0},{"attribute_id":484,"value":0.75},{"attribute_id":1006,"value":0.22},{"attribute_id":1009,"value":0.22},{"attribute_id":504,"value":0.0},{"attribute_id":506,"value":5000.0},{"attribute_id":507,"value":266.0},{"attribute_id":508,"value":220.0}],"dogma_effects":[{"effect_id":10,"is_default":true},{"effect_id":569,"is_default":false},{"effect_id":2192,"is_default":false}]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:47 GMT
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v1/universe/groups/615/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swagger-Codegen/0.1.0/ruby
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Content-Language:
+      - en-us
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 23 Mar 2018 10:25:45 GMT
+      Etag:
+      - W/"4a7503120c71a0e948f1f7e4f80b35b20158c4ce27f7aba51d126875"
+      Expires:
+      - Fri, 23 Mar 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 21 Mar 2018 11:06:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '15'
+      Content-Length:
+      - '307'
+      Via:
+      - 1.1 google
+      Cache-Control:
+      - public
+      Age:
+      - '2'
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"group_id":615,"name":"Deadspace Guristas Frigate","published":false,"category_id":11,"types":[16565,16566,16981,16983,16985,16986,16987,16989,16990,16993,16994,16996,16997,16999,17001,17002,17006,17008,17012,17013,17015,17019,17022,17023,17026,17027,17032,24045,24046,24047,24048,24049,24050,25825,32391]}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 10:25:47 GMT
+recorded_with: VCR 3.0.3

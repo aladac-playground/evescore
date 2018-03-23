@@ -79,17 +79,19 @@ class WalletRecord
     public_records.order('amount desc')
   end
 
-  def self.public_top_isk(limit = nil)
-    query = public_records.group(_id: '$character_id', :amount.sum => '$amount').desc(:amount)
+  def self.aggregate_public_top_pipeline(query, limit)
     pipeline = query.pipeline
     pipeline.push('$limit' => limit) if limit
     collection.aggregate pipeline
   end
 
+  def self.public_top_isk(limit = nil)
+    query = public_records.group(_id: '$character_id', :amount.sum => '$amount').desc(:amount)
+    aggregate_public_top_pipeline(query, limit)
+  end
+
   def self.public_top_average_ticks(limit = nil)
     query = public_records.group(_id: '$character_id', :amount.avg => '$amount').desc(:amount)
-    pipeline = query.pipeline
-    pipeline.push('$limit' => limit) if limit
-    collection.aggregate pipeline
+    aggregate_public_top_pipeline(query, limit)
   end
 end

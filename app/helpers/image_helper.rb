@@ -2,7 +2,7 @@
 
 module ImageHelper
   def icon_tag(icon, tooltip = nil)
-    image_tag(icon, { style: 'height: 32px' }.merge(tooltip(tooltip)))
+    image_tag("#{icon}.png", { style: 'height: 32px' }.merge(tooltip(tooltip)))
   end
 
   def navbar_portrait(character)

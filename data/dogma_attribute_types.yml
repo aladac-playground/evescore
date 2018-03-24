@@ -16294,6 +16294,7 @@
     icon_id: 0
     published: false
     stackable: true
+    display_name: Shield Boost Duration
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 524
@@ -16497,6 +16498,7 @@
     icon_id: 0
     published: false
     stackable: true
+    display_name: Fly Range
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 193
@@ -16508,6 +16510,7 @@
     high_is_good: true
     published: false
     stackable: true
+    display_name: Max Targets
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 512
@@ -16519,6 +16522,7 @@
     icon_id: 0
     published: false
     stackable: true
+    display_name: Web Chance
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 513
@@ -16531,6 +16535,7 @@
     published: false
     stackable: true
     unit_id: 3
+    display_name: Web Duration
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 514
@@ -16543,6 +16548,7 @@
     published: false
     stackable: true
     unit_id: 1
+    display_name: Web Range
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 484
@@ -16609,7 +16615,7 @@
     category_id: 30
     default_value: 20000.0
     description: Cycle time for a missile launch, in milliseconds.
-    display_name: Rate of fire
+    display_name: Missile Rate of fire
     high_is_good: true
     icon_id: 0
     published: true
@@ -16698,6 +16704,7 @@
     published: false
     stackable: true
     unit_id: 116
+    display_name: Missile Type Id
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 1006
@@ -17127,6 +17134,7 @@
     published: false
     stackable: true
     unit_id: 1
+    display_name: Chase Max Distance
 - !ruby/Mongoid:DogmaAttributeType
   attributes: !ruby/hash:BSON::Document
     _id: 582

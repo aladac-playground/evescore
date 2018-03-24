@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'rats/:id', to: 'rats#show'
+  get 'rats/:id', to: 'rats#show', as: :rats
 
   get 'welcome/index'
   get 'characters', to: 'characters#index', as: :characters

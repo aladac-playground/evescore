@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-module Rats
+module Charges
   class Attributes
+    attr_reader :array
     def initialize(array)
       @array = array
     end
@@ -12,7 +13,7 @@ module Rats
       end.first || super
     end
 
-    def respond_to_missing?
+    def respond_to_missing?(*args)
       super
     end
   end

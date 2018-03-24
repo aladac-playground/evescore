@@ -12,13 +12,11 @@ class Charge
   def charge_attributes
     types_api.dogma_attributes.map do |attribute|
       dgm = DogmaAttributeType.find(attribute.attribute_id)
-      {
-        id: dgm.id,
-        name: dgm.attribute_name,
-        display_name: dgm.display_name,
-        value: attribute.value,
-        description: dgm.description
-      }
+      OpenStruct.new(id: dgm.id,
+                     name: dgm.attribute_name,
+                     display_name: dgm.display_name.try(:titleize),
+                     value: attribute.value,
+                     description: dgm.description)
     end
   end
 end

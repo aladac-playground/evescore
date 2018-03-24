@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ImageHelper
-  def icon_tag(icon, _tooltip = nil)
-    image_tag("icons/#{icon}", style: 'height: 32px', data: { toggle: 'tooltip' }, title: 'tooltip')
+  def icon_tag(icon, tooltip = nil)
+    image_tag("icons/#{icon}", { style: 'height: 32px' }.merge(tooltip(tooltip)))
   end
 
   def navbar_portrait(character)
@@ -26,7 +26,7 @@ module ImageHelper
   def kill_image(kill)
     kill = OpenStruct.new(kill) if kill.class == BSON::Document
     title = "<strong>#{kill.name}</strong><br>#{kill.amount} kills"
-    type_image(kill.rat_id, 32, tooltip(title))
+    link_to type_image(kill.rat_id, 32, tooltip(title)), rats_path(kill.rat_id)
   rescue ActionView::Template::Error
     ''
   end
@@ -46,9 +46,9 @@ module ImageHelper
     image_tag("https://image.eveonline.com/Corporation/#{corporation_id}_#{size}.png", options)
   end
 
-  def faction_image(faction_id)
-    return '-' if faction_id.blank?
+  def faction_image(faction_id, size = 32)
+    return '' if faction_id.blank?
     faction = Faction.find(faction_id)
-    corporation_image faction.corporation_id, 32, tooltip(faction.corporation.name)
+    corporation_image faction.corporation_id, size, tooltip(faction.corporation.name)
   end
 end

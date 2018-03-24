@@ -14,7 +14,7 @@ class Rat
   def details_from_api
     rat = ESI::UniverseApi.new.get_universe_types_type_id(id)
     group = ESI::UniverseApi.new.get_universe_groups_group_id(rat.group_id)
-    self.bounty = rat.dogma_attributes.select { |a| a.attribute_id == 481 }.first.value
+    self.bounty = rat.dogma_attributes.select { |a| a.attribute_id == 481 }.first.try(:value) rescue nil
     self.name = rat.name
     self.group = group.name
   end

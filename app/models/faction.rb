@@ -7,6 +7,8 @@ class Faction
   validates :name, uniqueness: true
   belongs_to :corporation, optional: true
   has_many :rats
+  
+  scope :with_pattern, -> { where(:pattern.ne => nil) }
 
   def self.detect(string)
     all.each do |faction|

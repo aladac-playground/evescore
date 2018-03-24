@@ -9,6 +9,9 @@
       %a.navbar-brand{:href => "/"}
         = image_tag 'evescore.png'
     %ul.nav.navbar-nav.navbar-right
+      %li.navbar-form
+        .form-group
+          %input{type: :text, class: 'form-control typeahead', id: 'search', placeholder: 'Search', autocomplete: 'off'}
       - if current_user
         - current_user.characters.each do |character|
           %li= link_to navbar_portrait(character), character_profile_path(character)      

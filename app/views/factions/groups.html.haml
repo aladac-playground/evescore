@@ -1,0 +1,3 @@
+%h4= @group
+- @rats.each do |rat|
+  %p= link_to rat.name, rats_path(rat.id)

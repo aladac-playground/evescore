@@ -58,13 +58,12 @@ end
 
 def create_rats
   Rat.delete_all
-  ESI::UniverseApi.new.get_universe_categories_category_id(11).groups.map do |group_id|
+  rats = ESI::UniverseApi.new.get_universe_categories_category_id(11).groups.map do |group_id|
     ESI::UniverseApi.new.get_universe_groups_group_id(group_id).types.map do |type_id|
       type_id
     end
-  end.flatten.tqdm.each do |type_id|
-    Rat.create(id: type_id)
   end
+  rats.flatten.tqdm.each { |type_id| Rat.create(id: type_id) }
 end
 
 def create_charges

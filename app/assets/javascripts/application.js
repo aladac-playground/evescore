@@ -15,9 +15,25 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-select
+//= require typeahead.js/dist/bloodhound.js
+//= require typeahead.js/dist/typeahead.bundle.js
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip({ html: true });
   $('.selectpicker').selectpicker();
+  var bestPictures = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/search?query=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+
+  $('#search').typeahead(null, {
+    name: 'best-pictures',
+    display: 'name',
+    source: bestPictures
+  });
 })

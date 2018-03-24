@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'search', to: 'search#search'
+  get 'factions', to: 'factions#index', as: :factions
+  get 'factions/:id', to: 'factions#show', as: :faction
+  get 'factions/:faction_id/groups/:name', to: 'factions#groups', as: :group
+  get 'factions/groups'
   get 'rats/:id', to: 'rats#show', as: :rats
-
   get 'welcome/index'
   get 'characters', to: 'characters#index', as: :characters
   get 'characters/:character_id', to: 'characters#profile', as: :character_profile

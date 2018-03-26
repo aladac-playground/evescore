@@ -80,21 +80,15 @@ module RatsHelper
   end
 
   def web
-    attributes = [
-      { name: 'Range', value: number_with_delimiter(@attributes.web_range.value.to_i), unit: 'm' },
-      { name: 'Duration', value: (@attributes.web_duration.value / 1000).to_i, unit: 's' },
-      { name: 'Penalty', value: @attributes.maximum_velocity_bonus.value.to_i, unit: '%' }
-    ]
-    other_effects(title: 'Stasis Webifier', icon: 'web', attributes: attributes)
+    other_effects(@attributes.web)
+  rescue StandardError
+    ''
   end
 
   def neut
-    attributes = [
-      { name: 'Range', value: number_with_delimiter(@attributes.neutralization_optimal_range.value.to_i), unit: 'm' },
-      { name: 'Duration', value: (@attributes.neutralization_duration.value / 1000).to_i, unit: 's' },
-      { name: 'Amount', value: @attributes.neutralization_amount.value.to_i, unit: 'GJ' }
-    ]
-    other_effects(title: 'Energy Neutralizer', icon: 'neut', attributes: attributes)
+    other_effects(@attributes.neut)
+  rescue StandardError
+    ''
   end
 
   def bounty

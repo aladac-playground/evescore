@@ -19,8 +19,11 @@ module ImageHelper
     ded_boss = DedSite.all.map(&:boss_id).include?(type_id)
     options[:class] = 'img-rounded cursor-hand'
     options[:style] = 'border: 1px solid; border-color: red' if ded_boss
-    # concat = '&nbsp;'.html_safe
     image_tag("https://image.eveonline.com/Type/#{type_id}_#{size}.png", options)
+  end
+
+  def type_image_path(type_id, size = 32)
+    "https://image.eveonline.com/Type/#{type_id}_#{size}.png"
   end
 
   def kill_image(kill)

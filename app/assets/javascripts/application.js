@@ -17,12 +17,13 @@
 //= require bootstrap-select
 //= require typeahead.js/dist/bloodhound.js
 //= require typeahead.js/dist/typeahead.bundle.js
+//= require handlebars/dist/handlebars.min.js
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip({ html: true });
   $('.selectpicker').selectpicker();
-  var bestPictures = new Bloodhound({
+  var typeaheadSource = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
@@ -32,8 +33,14 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#search').typeahead(null, {
-    name: 'best-pictures',
     display: 'name',
-    source: bestPictures
+    source: typeaheadSource,
+    templates: {
+      suggestion: Handlebars.compile('<div><img class=img-rounded src={{image}}>&nbsp;{{name}}</div>')
+    }
+  });
+  
+  $('#search').bind('typeahead:select', function(ev, suggestion) {
+    window.location.pathname = suggestion.path
   });
 })

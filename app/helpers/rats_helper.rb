@@ -5,7 +5,11 @@ module RatsHelper
 
   HP_PRESENTERS.each do |method_name|
     define_method(method_name) do
-      icon_tag(method_name.to_s, @attributes.send(method_name).display_name) + @attributes.send(method_name).presented_value
+      begin
+        icon_tag(method_name.to_s, @attributes.send(method_name).display_name) + @attributes.send(method_name).presented_value
+      rescue StandardError
+        '-'
+      end
     end
   end
 

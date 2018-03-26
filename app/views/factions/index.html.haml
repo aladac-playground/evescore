@@ -1,2 +1,7 @@
-- @factions.each do |faction|
-  = link_to faction_image(faction.id, 128), faction_path(faction.id)
+%ol.breadcrumb
+  %li.breadcrumb-item.active Factions
+
+.panel.panel-default
+  .panel-body
+    - @factions.each do |faction|
+      = link_to faction_image(faction.id, 128), faction_path(faction.id)

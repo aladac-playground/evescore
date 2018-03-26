@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'search', to: 'search#search'
   get 'factions', to: 'factions#index', as: :factions
   get 'factions/:id', to: 'factions#show', as: :faction
-  get 'factions/:faction_id/groups/:name', to: 'factions#groups', as: :group
+  get 'factions/:faction_id/groups/:group_id', to: 'factions#groups', as: :group
   get 'factions/groups'
   get 'rats/:id', to: 'rats#show', as: :rats
   get 'rats/:id/details', to: 'rats#details', as: :rats_details

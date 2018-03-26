@@ -38,6 +38,10 @@ namespace :import do
   task rats: :environment do
     create_rats
   end
+  desc 'Import Groups'
+  task groups: :environment do
+    create_groups
+  end
 end
 
 def logger
@@ -56,14 +60,23 @@ def import_all
   create_dogma_attribute_types
 end
 
+def create_groups
+  Group.delete_all
+  ESI::UniverseApi.new.get_universe_categories_category_id(11).groups.tqdm.each do |group_id|
+    group = ESI::UniverseApi.new.get_universe_groups_group_id(group_id)
+    Group.create(name: group.name, id: group.group_id)
+  end
+end
+
 def create_rats
+  create_groups
   Rat.delete_all
   rats = ESI::UniverseApi.new.get_universe_categories_category_id(11).groups.map do |group_id|
     ESI::UniverseApi.new.get_universe_groups_group_id(group_id).types.map do |type_id|
-      type_id
+      { id: type_id, group_id: group_id }
     end
   end
-  rats.flatten.tqdm.each { |type_id| Rat.create(id: type_id) }
+  rats.flatten.tqdm.each { |rat_attrs| Rat.create(rat_attrs) }
 end
 
 def create_charges

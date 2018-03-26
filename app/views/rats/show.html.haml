@@ -1,10 +1,20 @@
+%ol.breadcrumb
+  -if @rat.faction 
+    %li.breadcrumb-item
+      = link_to 'Factions', factions_path
+    %li.breadcrumb-item
+      = link_to @rat.faction.name, faction_path(id: @rat.faction_id)
+    %li.breadcrumb-item
+      = link_to @rat.group.name, group_path(faction_id: @rat.faction_id, group_id: @rat.group_id)
+  %li.breadcrumb-item.active= @rat.name
 .panel.panel-default
-  .panel-heading
-    %h4
-      = @rat.name
-      %em.pull-right
-        = @rat.group
   .panel-body
+    .row
+      .col-sm-12
+        %table.table.table-condensed
+          %caption Description
+          %tr
+            %td= @rat.description
     .row
       .col-sm-3
         %table.table.table-condensed

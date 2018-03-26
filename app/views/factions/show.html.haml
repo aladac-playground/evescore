@@ -1,3 +1,10 @@
-%h4= @faction.name
-- @groups.each do |group|
-  %p= link_to group, group_path(name: group, faction_id: @faction.id)
+%ol.breadcrumb
+  %li.breadcrumb-item
+    = link_to 'Factions', factions_path
+  %li.breadcrumb-item.active= @faction.name
+
+.panel.panel-default
+  .panel-body
+    - @groups.each do |group|
+      %p= link_to group.name, group_path(group_id: group.id, faction_id: @faction.id)
+

@@ -4,11 +4,11 @@ class Rat
   include Mongoid::Document
   include ApiAttributes
   field :name, type: String
-  field :group, type: String
   field :bounty, type: Float
   field :faction_name, type: String
   has_many :kills
   belongs_to :faction, optional: true
+  belongs_to :group
 
   before_save :details_from_api, :set_faction
 
@@ -23,15 +23,19 @@ class Rat
                     nil
                   end
     self.name = rat.name
-    self.group = group.name
+    self.group = group.group_id
   end
 
   def types_api
     ESI::UniverseApi.new.get_universe_types_type_id(id)
   end
 
+  def description
+    types_api.description
+  end
+
   def set_faction
-    faction = Faction.detect(group) || Faction.detect(name)
+    faction = Faction.detect(group.name) || Faction.detect(name)
     return false unless faction
     self.faction_name = faction.name
     self.faction_id = faction.id

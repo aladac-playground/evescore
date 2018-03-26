@@ -52,6 +52,6 @@ module ImageHelper
   def faction_image(faction_id, size = 32)
     return '' if faction_id.blank?
     faction = Faction.find(faction_id)
-    corporation_image faction.corporation_id, size, tooltip(faction.corporation.name)
+    image_tag("faction_#{faction_id}.png", { style: "height: #{size}px" }.merge(tooltip(faction.name)))
   end
 end

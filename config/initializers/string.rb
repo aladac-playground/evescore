@@ -10,4 +10,10 @@ class String
   def i?
     /\A[-+]?\d+\z/ =~ self
   end
+
+  unless method_defined? :match?
+    def matcha?(pattern)
+      match(pattern) || false
+    end
+  end
 end

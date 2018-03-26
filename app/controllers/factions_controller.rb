@@ -16,10 +16,11 @@ class FactionsController < ApplicationController
   end
 
   def factionless
-    @groups = Group.where(faction_id: nil).sort('name desc')
+    @groups = Group.where(faction_id: nil).sort('name asc')
   end
 
   def factionless_group
     @group = Group.find(params[:group_id].to_i)
+    @rats = @group.rats.where(faction_id: nil).sort('name asc')
   end
 end

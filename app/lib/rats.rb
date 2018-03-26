@@ -3,14 +3,17 @@
 module Rats
   class Attributes < GenericAttributes
     HELPER_PRESENTERS = [
-      { name: :web, title: 'Stasis Webifier', attributes: %i[web_range web_duration maximum_velocity_bonus] },
-      { name: :neut, title: 'Energy Neutrilizer', attributes: %i[neutralization_optimal_range neutralization_duration neutralization_amount] },
-      { name: :scram, title: 'Warp Scramble', attributes: %i[warp_disruption_range warp_scramble_strength] }
+      { name: :web, title: 'Stasis Webifier', attributes: %i[modify_target_speed_range modify_target_speed_duration speed_factor modify_target_speed_chance] },
+      { name: :neut, title: 'Energy Neutrilizer', attributes: %i[energy_neutralizer_range_optimal energy_neutralizer_duration energy_neutralizer_amount energy_neutralizer_entity_chance] },
+      { name: :scram, title: 'Warp Scramble', attributes: %i[warp_scramble_range warp_scramble_strength entity_warp_scramble_chance] },
+      { name: :ecm, title: 'ECM', attributes: %i[ecm_range_optimal ecm_duration ecm_entity_chance] }
     ].freeze
 
     HELPER_PRESENTERS.each do |row|
       define_method(row[:name]) do
-        { icon: row[:name].to_s, title: row[:title], attributes: row[:attributes].map { |a| send(a).to_helper_attribute } }
+        attributes = row[:attributes].map { |a| send(a).to_helper_attribute }
+        raise StandardError if attributes.map { |a| a[:raw_value] }.uniq.first == 0.0
+        { icon: row[:name].to_s, title: row[:title], attributes: attributes }
       end
     end
   end

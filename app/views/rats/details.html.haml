@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-heading
+    %h4
+      = @rat.name
+      %em.pull-right
+        = @rat.group
+  .panel-body
+    %table.table
+      - @rat.rat_attributes.sort_by { |a| a.name }.each do |attribute|
+        %tr
+          %th
+            %span{ tooltip(attribute.description).merge({style: 'cursor: pointer'}) }= attribute.name
+          %td= attribute.display_name
+          %td= attribute.name.underscore
+          %td= number_with_delimiter attribute.value

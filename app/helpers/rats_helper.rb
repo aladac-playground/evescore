@@ -19,6 +19,32 @@ module RatsHelper
     '-'
   end
 
+  def shield_boost
+    begin
+      boost = @attributes.entity_shield_boost_amount_per_second.value
+    rescue StandardError
+      begin
+        boost = @attributes.entity_shield_boost_amount.value / (@attributes.entity_shield_boost_duration.value / 1000)
+      rescue StandardError
+        boost = @attributes.shield_capacity.value / (@attributes.shield_recharge_rate.value / 1000)
+      end
+    end
+    icon_tag('shield_boost', 'Shield Boost Per Second') + number_with_precision(boost, precision: 2, delimiter: ',') + ' HP/s'
+  rescue StandardError
+    icon_tag('shield_boost', 'Shield Boost Per Second') + '-'
+  end
+
+  def armor_rep
+    begin
+      boost = @attributes.entity_armor_repair_amount_per_second.value
+    rescue StandardError
+      boost = @attributes.entity_armor_repair_amount.value / (@attributes.entity_armor_repair_duration.value / 1000)
+    end
+    icon_tag('armor_rep', 'Armor Repair Per Second') + number_with_delimiter(boost) + ' HP/s'
+  rescue StandardError
+    icon_tag('armor_rep', 'Armor Repair Per Second') + '-'
+  end
+
   def shield_resistance(type)
     number_with_delimiter((100 - @attributes.send("shield_#{type}_damage_resonance").value * 100).to_i) + ' %'
   rescue StandardError
@@ -38,7 +64,11 @@ module RatsHelper
   end
 
   def missile_damage(type)
-    multiplier = @attributes.try(:missile_damage_multiplier).try(:value) || 1
+    begin
+      multiplier = @attributes.missile_damage_multiplier.value
+    rescue StandardError
+      multiplier = 1
+    end
     number_with_precision((@missile_attributes.send("#{type}_damage").value * multiplier / (@attributes.missile_launch_duration.value / 1000)), precision: 2, delimiter: ',')
   rescue StandardError
     '-'
@@ -52,7 +82,12 @@ module RatsHelper
   end
 
   def total_missile_damage
-    total = @missile_attributes.summarize_damage / (@attributes.missile_launch_duration.value / 1000)
+    begin
+      multiplier = @attributes.missile_damage_multiplier.value
+    rescue StandardError
+      multiplier = 1
+    end
+    total = @missile_attributes.summarize_damage / (@attributes.missile_launch_duration.value / 1000) * multiplier
     icon_tag('missile_launcher', 'Missle DPS') + ' ' + number_with_precision(total, precision: 2, delimiter: ',')
   rescue StandardError
     icon_tag('missile_launcher', 'Missle DPS') + '-'
@@ -98,8 +133,64 @@ module RatsHelper
     ''
   end
 
+  def ecm
+    other_effects(@attributes.ecm)
+  rescue StandardError
+    ''
+  end
+
   def bounty
     icon_tag('isk') + ' ' + number_with_delimiter(@attributes.entity_kill_bounty.value.to_i) + ' ISK'
+  rescue StandardError
+    '-'
+  end
+
+  def cruise_speed
+    @attributes.entity_cruise_speed.value.to_s + ' m/s'
+  rescue StandardError
+    '-'
+  end
+
+  def max_speed
+    @attributes.max_velocity.value.to_s + ' m/s'
+  rescue StandardError
+    '-'
+  end
+
+  def orbit_range
+    number_with_delimiter(@attributes.entity_fly_range.value.to_i) + ' m'
+  rescue StandardError
+    '-'
+  end
+
+  def max_range
+    number_with_delimiter(@attributes.max_range.value.to_i) + ' m'
+  end
+
+  def signature_radius
+    number_with_delimiter(@attributes.signature_radius.value.to_i) + ' m'
+  end
+
+  def prefered_signature
+    number_with_delimiter(@attributes.optimal_sig_radius.value.to_i) + ' m'
+  rescue StandardError
+    '-'
+  end
+
+  def max_locked_targets
+    @attributes.max_locked_targets.value.to_i.to_s
+  rescue StandardError
+    '-'
+  end
+
+  def max_attack_targets
+    @attributes.max_attack_targets.value.to_i.to_s
+  rescue StandardError
+    '-'
+  end
+
+  def ignore_drones
+    @attributes.ai_ignore_drones_below_signature_radius.value.to_i.to_s + ' m'
   rescue StandardError
     '-'
   end

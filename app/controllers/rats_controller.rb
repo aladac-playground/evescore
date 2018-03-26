@@ -12,4 +12,9 @@ class RatsController < ApplicationController
   rescue Mongoid::Errors::DocumentNotFound
     head :not_found
   end
+
+  def details
+    @rat = Rat.find(params[:id].to_i)
+    @attributes = Rats::Attributes.new(@rat.rat_attributes)
+  end
 end

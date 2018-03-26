@@ -7,7 +7,8 @@ class TypeAttribute < OpenStruct
     { pattern: /range/i, unit: 'm', value_as: :number_with_delimiter, divide_by: 1, process_value: :to_i },
     { pattern: /duration/i, unit: 's', value_as: :number_with_delimiter, divide_by: 1000, process_value: :to_f },
     { pattern: /bonus/i, unit: '%', value_as: :number_with_delimiter, divide_by: 1, process_value: :to_i },
-    { pattern: /neutralization amount/i, unit: 'GJ', value_as: :number_with_delimiter, divide_by: 1, process_value: :to_i }
+    { pattern: /neutralization amount/i, unit: 'GJ', value_as: :number_with_delimiter, divide_by: 1, process_value: :to_i },
+    { pattern: /chance/i, unit: '%', value_as: :number_with_delimiter, divide_by: 0.01, process_value: :to_i }
   ].freeze
 
   def presented_hash
@@ -26,7 +27,8 @@ class TypeAttribute < OpenStruct
   def to_helper_attribute
     {
       name: display_name,
-      value: presented_value
+      value: presented_value,
+      raw_value: value.to_f
     }
   end
 end

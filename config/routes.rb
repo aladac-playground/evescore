@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'factions/:faction_id/groups/:name', to: 'factions#groups', as: :group
   get 'factions/groups'
   get 'rats/:id', to: 'rats#show', as: :rats
+  get 'rats/:id/details', to: 'rats#details', as: :rats_details
   get 'welcome/index'
   get 'characters', to: 'characters#index', as: :characters
   get 'characters/:character_id', to: 'characters#profile', as: :character_profile

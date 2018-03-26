@@ -5,72 +5,93 @@
       %em.pull-right
         = @rat.group
   .panel-body
-    = type_image(@rat.id, 64)
-    = faction_image(@rat.faction_id, 64)
-    %p
-    %table.table.table-condensed
-      %tr
-        %th{ colspan: 10 }
-          %h4.text-muted Bounty
-      %tr
-        %td= bounty
-      %tr
-        %th{ colspan: 5 }
-          %h4.text-muted Defense
-        %th{ colspan: 5 }
-          %h4.text-muted Damage          
-      %tr
-        %td
-        %td= resistance(:kinetic)
-        %td= resistance(:thermal)
-        %td= resistance(:explosive)
-        %td= resistance(:em)
-        %td
-        %td= damage(:kinetic)
-        %td= damage(:thermal)
-        %td= damage(:explosive)
-        %td= damage(:em)
-      %tr
-        %td.col-sm-2=shield_capacity
-        %td.col-sm-1=shield_resistance(:kinetic)
-        %td.col-sm-1=shield_resistance(:thermal)
-        %td.col-sm-1=shield_resistance(:explosive)
-        %td.col-sm-1=shield_resistance(:em)
-        %td.col-sm-2= total_turret_damage
-        %td.col-sm-1= turret_damage(:kinetic)
-        %td.col-sm-1= turret_damage(:thermal)
-        %td.col-sm-1= turret_damage(:explosive)
-        %td.col-sm-1= turret_damage(:em)
-      %tr
-        %td=armor_hitpoints
-        %td=armor_resistance(:kinetic)
-        %td=armor_resistance(:thermal)
-        %td=armor_resistance(:explosive)
-        %td=armor_resistance(:em)
-        %td= total_missile_damage
-        %td= missile_damage(:kinetic)
-        %td= missile_damage(:thermal)
-        %td= missile_damage(:explosive)
-        %td= missile_damage(:em)
-      %tr
-        %td{ colspan: 10 }= structure_hitpoints
-      %tr
-        %th{ colspan: 10 }
-          %h4.text-muted Other
-      %tr
-        %td{ colspan: 10 }
-          = scram
-          = web
-          = neut
-    %table.table
-      %tr
-        %th{ colspan: 3 }
-          %h4.text-muted
-            Literal Attributes
-      - @rat.rat_attributes.sort_by { |a| a.name }.each do |attribute|
-        %tr
-          %th
-            %span{ tooltip(attribute.description).merge({style: 'cursor: pointer'}) }= attribute.name
-          %td= attribute.display_name
-          %td= attribute.name.underscore
-          %td= number_with_delimiter attribute.value
+    .row
+      .col-sm-3
+        %table.table.table-condensed
+          %caption Image & Faction
+          %tr
+            %td{ rowspan: 2 }
+              = type_image(@rat.id, 64)
+              = faction_image(@rat.faction_id, 64)
+        %table.table.table-condensed
+          %caption Bounty
+          %tr
+            %td= bounty
+      .col-sm-9
+        %table.table.table-condensed
+          %caption Defense
+          %tr
+            %th HP
+            %th Repair
+            %td= resistance(:kinetic)
+            %td= resistance(:thermal)
+            %td= resistance(:explosive)
+            %td= resistance(:em)
+          %tr
+            %td.col-sm-2= shield_capacity
+            %td.col-sm-2= shield_boost
+            %td.col-sm-1= shield_resistance(:kinetic)
+            %td.col-sm-1= shield_resistance(:thermal)
+            %td.col-sm-1= shield_resistance(:explosive)
+            %td.col-sm-1= shield_resistance(:em)
+          %tr
+            %td= armor_hitpoints
+            %td= armor_rep
+            %td= armor_resistance(:kinetic)
+            %td= armor_resistance(:thermal)
+            %td= armor_resistance(:explosive)
+            %td= armor_resistance(:em)
+          %tr
+            %td{ colspan: 6 }= structure_hitpoints
+    .row
+      .col-sm-6
+        %table.table.table-condensed
+          %caption Navigation & Targeting
+          %tr
+            %td.col-sm-3= icon_tag('ab', 'Cruise Speed') + cruise_speed
+            %td.col-sm-3= icon_tag('mwd', 'Max Speed') + max_speed
+            %td.col-sm-3= icon_tag('orbit', 'Orbit Range') + orbit_range
+            %td.col-sm-3= icon_tag('range', 'Max Range') + max_range
+          %tr
+            %td= icon_tag('sig', 'Signature Radius') + signature_radius
+            %td= icon_tag('sig', 'Prefered Target Signature Radius') + prefered_signature
+            %td= icon_tag('target', 'Max Locked Targets') + max_locked_targets
+            %td= icon_tag('target', 'Max Targets') + max_attack_targets
+          %tr
+            %td{ colspan: 4}= icon_tag('drones', 'Ignore Drones Below This Size') + ignore_drones
+        
+      .col-sm-6
+        %table.table.table-condensed
+          %caption Offense
+          %tr
+            %th DPS
+            %td= damage(:kinetic)
+            %td= damage(:thermal)
+            %td= damage(:explosive)
+            %td= damage(:em)
+          %tr
+            %td.col-sm-1= total_turret_damage
+            %td.col-sm-1= turret_damage(:kinetic)
+            %td.col-sm-1= turret_damage(:thermal)
+            %td.col-sm-1= turret_damage(:explosive)
+            %td.col-sm-1= turret_damage(:em)
+          %tr
+            %td= total_missile_damage
+            %td= missile_damage(:kinetic)
+            %td= missile_damage(:thermal)
+            %td= missile_damage(:explosive)
+            %td= missile_damage(:em)
+    .row
+      .col-sm-12
+        %table.table.table-condensed
+          %caption EWAR
+          %tr
+            %td
+              = scram
+              = web
+              = neut
+              = ecm
+        
+    .row
+      .col-sm-12
+        = link_to 'More Details', rats_details_path(@rat), class: 'btn btn-primary'

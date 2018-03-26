@@ -2,13 +2,13 @@
 
 module RatsHelper
   def structure_hitpoints
-    icon_tag('structure', @attributes.structure_hitpoints.display_name) + number_with_delimiter(@attributes.structure_hitpoints.value.to_i) + ' HP'
+    icon_tag('structure', @attributes.hp.display_name) + number_with_delimiter(@attributes.hp.value.to_i) + ' HP'
   rescue StandardError
     '-'
   end
 
   def armor_hitpoints
-    icon_tag('armor', @attributes.armor_hitpoints.display_name) + number_with_delimiter(@attributes.armor_hitpoints.value.to_i) + ' HP'
+    icon_tag('armor', @attributes.armor_hp.display_name) + number_with_delimiter(@attributes.armor_hp.value.to_i) + ' HP'
   rescue StandardError
     '-'
   end
@@ -20,38 +20,39 @@ module RatsHelper
   end
 
   def shield_resistance(type)
-    number_with_delimiter((100 - @attributes.send("shield_#{type}_damage_resistance").value * 100).to_i) + ' %'
+    number_with_delimiter((100 - @attributes.send("shield_#{type}_damage_resonance").value * 100).to_i) + ' %'
   rescue StandardError
     '0 %'
   end
 
   def armor_resistance(type)
-    number_with_delimiter((100 - @attributes.send("armor_#{type}_damage_resistance").value * 100).to_i) + ' %'
+    number_with_delimiter((100 - @attributes.send("armor_#{type}_damage_resonance").value * 100).to_i) + ' %'
   rescue StandardError
     '0 %'
   end
 
   def turret_damage(type)
-    number_with_precision((@attributes.send("#{type}_damage").value * @attributes.damage_modifier.value), precision: 2, delimiter: ',')
+    number_with_precision((@attributes.send("#{type}_damage").value * @attributes.damage_multiplier.value), precision: 2, delimiter: ',')
   rescue StandardError
     '-'
   end
 
   def missile_damage(type)
-    number_with_precision((@missile_attributes.send("#{type}_damage").value * @attributes.missile_damage_bonus.value / (@attributes.missile_rate_of_fire.value / 1000)), precision: 2, delimiter: ',')
+    multiplier = @attributes.try(:missile_damage_multiplier).try(:value) || 1
+    number_with_precision((@missile_attributes.send("#{type}_damage").value * multiplier / (@attributes.missile_launch_duration.value / 1000)), precision: 2, delimiter: ',')
   rescue StandardError
     '-'
   end
 
   def total_turret_damage
-    total = @attributes.summarize_damage * @attributes.damage_modifier.value
+    total = @attributes.summarize_damage * @attributes.damage_multiplier.value
     icon_tag('turret', 'Turret DPS') + number_with_precision(total, precision: 2, delimiter: ',')
   rescue StandardError
     icon_tag('turret', 'Turret DPS') + '-'
   end
 
   def total_missile_damage
-    total = @missile_attributes.summarize_damage / (@attributes.missile_rate_of_fire.value / 1000)
+    total = @missile_attributes.summarize_damage / (@attributes.missile_launch_duration.value / 1000)
     icon_tag('missile_launcher', 'Missle DPS') + ' ' + number_with_precision(total, precision: 2, delimiter: ',')
   rescue StandardError
     icon_tag('missile_launcher', 'Missle DPS') + '-'
@@ -91,8 +92,14 @@ module RatsHelper
     ''
   end
 
+  def scram
+    other_effects(@attributes.scram)
+  rescue StandardError
+    ''
+  end
+
   def bounty
-    icon_tag('isk') + ' ' + number_with_delimiter(@attributes.bounty.value.to_i) + ' ISK'
+    icon_tag('isk') + ' ' + number_with_delimiter(@attributes.entity_kill_bounty.value.to_i) + ' ISK'
   rescue StandardError
     '-'
   end

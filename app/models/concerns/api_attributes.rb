@@ -11,6 +11,6 @@ module ApiAttributes
                         display_name: dgm.display_name.try(:titleize),
                         value: attribute.value,
                         description: dgm.description)
-    end.reject(&:zero?).select(&:display_name)
+    end.reject(&:zero?)
   end
 end

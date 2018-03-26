@@ -5,7 +5,7 @@ class RatsController < ApplicationController
     @rat = Rat.find(params[:id].to_i)
     @attributes = Rats::Attributes.new(@rat.rat_attributes)
     @missile_attributes = begin
-                            Charges::Attributes.new(Charge.find(@attributes.missile_type_id.value.to_i).charge_attributes)
+                            Charges::Attributes.new(Charge.find(@attributes.entity_missile_type_id.value.to_i).charge_attributes)
                           rescue StandardError
                             nil
                           end

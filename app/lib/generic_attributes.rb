@@ -21,7 +21,7 @@ class GenericAttributes
 
   def method_missing(method_name)
     @array.select do |attribute|
-      attribute.display_name == method_name.to_s.split('_').map(&:capitalize).join(' ').gsub(/ Em /, ' EM ')
+      attribute.name.underscore == method_name.to_s
     end.first || super
   end
 

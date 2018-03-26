@@ -59,6 +59,7 @@
           %h4.text-muted Other
       %tr
         %td{ colspan: 10 }
+          = scram
           = web
           = neut
     %table.table
@@ -66,9 +67,10 @@
         %th{ colspan: 3 }
           %h4.text-muted
             Literal Attributes
-      - @rat.rat_attributes.sort_by { |a| a.display_name }.each do |attribute|
+      - @rat.rat_attributes.sort_by { |a| a.name }.each do |attribute|
         %tr
           %th
-            %span{ tooltip(attribute.description).merge({style: 'cursor: pointer'}) }= attribute.display_name
-          %td= attribute.display_name.gsub(/\s/,'').underscore
+            %span{ tooltip(attribute.description).merge({style: 'cursor: pointer'}) }= attribute.name
+          %td= attribute.display_name
+          %td= attribute.name.underscore
           %td= number_with_delimiter attribute.value

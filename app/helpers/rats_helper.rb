@@ -69,26 +69,32 @@ module RatsHelper
     ''
   end
 
-  def web
-    text = "<strong>Stasis Webifier</strong><br>
-      <strong>Range:</strong> #{number_with_delimiter(@attributes.web_range.value.to_i)} m<br>
-      <strong>Duration:</strong> #{(@attributes.web_duration.value / 1000).to_i} s<br>
-      <strong>Penalty:</strong> #{@attributes.maximum_velocity_bonus.value.to_i} %<br>
-    "
-    icon_tag('web', text)
+  def other_effects(opts)
+    text = +"<strong><em>#{opts[:title]}</em></strong><br>"
+    opts[:attributes].each do |attribute|
+      text << "<strong>#{attribute[:name]}:</strong> #{attribute[:value]} #{attribute[:unit]}<br>"
+    end
+    icon_tag(opts[:icon], text)
   rescue StandardError
     ''
   end
 
+  def web
+    attributes = [
+      { name: 'Range', value: number_with_delimiter(@attributes.web_range.value.to_i), unit: 'm' },
+      { name: 'Duration', value: (@attributes.web_duration.value / 1000).to_i, unit: 's' },
+      { name: 'Penalty', value: @attributes.maximum_velocity_bonus.value.to_i, unit: '%' }
+    ]
+    other_effects(title: 'Stasis Webifier', icon: 'web', attributes: attributes)
+  end
+
   def neut
-    text = "<strong>Energy Neutralizer</strong><br>
-      <strong>Range:</strong> #{number_with_delimiter(@attributes.neutralization_optimal_range.value.to_i)} m<br>
-      <strong>Duration:</strong> #{(@attributes.neutralization_duration.value / 1000).to_i} s<br>
-      <strong>Amount:</strong> #{@attributes.neutralization_amount.value.to_i} GJ<br>
-    "
-    icon_tag('neut', text)
-  rescue StandardError
-    ''
+    attributes = [
+      { name: 'Range', value: number_with_delimiter(@attributes.neutralization_optimal_range.value.to_i), unit: 'm' },
+      { name: 'Duration', value: (@attributes.neutralization_duration.value / 1000).to_i, unit: 's' },
+      { name: 'Amount', value: @attributes.neutralization_amount.value.to_i, unit: 'GJ' }
+    ]
+    other_effects(title: 'Energy Neutralizer', icon: 'neut', attributes: attributes)
   end
 
   def bounty

@@ -12,6 +12,7 @@ before_script:
   - ./cc-test-reporter before-build
   - npm install -g yarn@1.5.1
   - bundle exec rake yarn:install
+  - bundle exec rake import:dogma_attribute_types
 script:
   - bundle exec rake
 after_script:

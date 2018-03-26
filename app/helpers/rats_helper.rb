@@ -1,64 +1,30 @@
 # frozen_string_literal: true
 
 module RatsHelper
-  def structure_hitpoints
-    icon_tag('structure', @attributes.hp.display_name) + number_with_delimiter(@attributes.hp.value.to_i) + ' HP'
-  rescue StandardError
-    '-'
-  end
+  HP_PRESENTERS = %i[hp armor_hp shield_capacity].freeze
 
-  def armor_hitpoints
-    icon_tag('armor', @attributes.armor_hp.display_name) + number_with_delimiter(@attributes.armor_hp.value.to_i) + ' HP'
-  rescue StandardError
-    '-'
-  end
-
-  def shield_capacity
-    icon_tag('shield', @attributes.shield_capacity.display_name) + number_with_delimiter(@attributes.shield_capacity.value.to_i) + ' HP'
-  rescue StandardError
-    '-'
-  end
-
-  def shield_boost
-    begin
-      boost = @attributes.entity_shield_boost_amount_per_second.value
-    rescue StandardError
-      begin
-        boost = @attributes.entity_shield_boost_amount.value / (@attributes.entity_shield_boost_duration.value / 1000)
-      rescue StandardError
-        boost = @attributes.shield_capacity.value / (@attributes.shield_recharge_rate.value / 1000)
-      end
+  HP_PRESENTERS.each do |method_name|
+    define_method(method_name) do
+      icon_tag(method_name.to_s, @attributes.send(method_name).display_name) + @attributes.send(method_name).presented_value
     end
-    icon_tag('shield_boost', 'Shield Boost Per Second') + number_with_precision(boost, precision: 2, delimiter: ',') + ' HP/s'
-  rescue StandardError
-    icon_tag('shield_boost', 'Shield Boost Per Second') + '-'
   end
 
-  def armor_rep
-    begin
-      boost = @attributes.entity_armor_repair_amount_per_second.value
-    rescue StandardError
-      boost = @attributes.entity_armor_repair_amount.value / (@attributes.entity_armor_repair_duration.value / 1000)
-    end
-    icon_tag('armor_rep', 'Armor Repair Per Second') + number_with_delimiter(boost) + ' HP/s'
+  def repair(type)
+    icon = icon_tag(type.to_s, "#{type.to_s.titleize} Per Second")
+    rep = @attributes.repair_value(type)
+    icon + number_with_precision(rep, precision: 2, delimiter: ',') + ' HP/s'
   rescue StandardError
-    icon_tag('armor_rep', 'Armor Repair Per Second') + '-'
+    icon + '-'
   end
 
-  def shield_resistance(type)
-    number_with_delimiter((100 - @attributes.send("shield_#{type}_damage_resonance").value * 100).to_i) + ' %'
-  rescue StandardError
-    '0 %'
-  end
-
-  def armor_resistance(type)
-    number_with_delimiter((100 - @attributes.send("armor_#{type}_damage_resonance").value * 100).to_i) + ' %'
+  def resistance_value(type, flavour)
+    number_with_delimiter((100 - @attributes.send("#{flavour}_#{type}_damage_resonance").value * 100).to_i) + ' %'
   rescue StandardError
     '0 %'
   end
 
   def turret_damage(type)
-    number_with_precision((@attributes.send("#{type}_damage").value * @attributes.damage_multiplier.value), precision: 2, delimiter: ',')
+    number_with_precision((@attributes.send("#{type}_damage").value * @attributes.damage_multiplier.value / (@attributes.speed.value / 1000)), precision: 2, delimiter: ',')
   rescue StandardError
     '-'
   end
@@ -75,7 +41,7 @@ module RatsHelper
   end
 
   def total_turret_damage
-    total = @attributes.summarize_damage * @attributes.damage_multiplier.value
+    total = @attributes.summarize_damage * @attributes.damage_multiplier.value / (@attributes.speed.value / 1000)
     icon_tag('turret', 'Turret DPS') + number_with_precision(total, precision: 2, delimiter: ',')
   rescue StandardError
     icon_tag('turret', 'Turret DPS') + '-'
@@ -93,14 +59,8 @@ module RatsHelper
     icon_tag('missile_launcher', 'Missle DPS') + '-'
   end
 
-  def resistance(type)
-    icon_tag("#{type}_resist", "#{type.to_s.capitalize} Resistance")
-  rescue StandardError
-    ''
-  end
-
-  def damage(type)
-    icon_tag("#{type}_damage", "#{type.to_s.capitalize} Damage")
+  def damage_type(type, flavour)
+    icon_tag("#{type}_#{flavour}", "#{type.to_s.capitalize} #{flavour.to_s.capitalize}")
   rescue StandardError
     ''
   end
@@ -115,83 +75,30 @@ module RatsHelper
     ''
   end
 
-  def web
-    other_effects(@attributes.web)
-  rescue StandardError
-    ''
+  EFFECT_PRESENT_HELPERS = %i[web neut scram ecm].freeze
+
+  EFFECT_PRESENT_HELPERS.each do |method_name|
+    define_method(method_name) do
+      begin
+        other_effects @attributes.send(method_name)
+      rescue StandardError
+        ''
+      end
+    end
   end
 
-  def neut
-    other_effects(@attributes.neut)
-  rescue StandardError
-    ''
-  end
+  SIMPLE_PRESENT_HELPERS = %i[
+    max_velocity entity_cruise_speed entity_fly_range max_range signature_radius optimal_sig_radius
+    max_locked_targets max_attack_targets ai_ignore_drones_below_signature_radius entity_kill_bounty
+  ].freeze
 
-  def scram
-    other_effects(@attributes.scram)
-  rescue StandardError
-    ''
-  end
-
-  def ecm
-    other_effects(@attributes.ecm)
-  rescue StandardError
-    ''
-  end
-
-  def bounty
-    icon_tag('isk') + ' ' + number_with_delimiter(@attributes.entity_kill_bounty.value.to_i) + ' ISK'
-  rescue StandardError
-    '-'
-  end
-
-  def cruise_speed
-    @attributes.entity_cruise_speed.value.to_s + ' m/s'
-  rescue StandardError
-    '-'
-  end
-
-  def max_speed
-    @attributes.max_velocity.value.to_s + ' m/s'
-  rescue StandardError
-    '-'
-  end
-
-  def orbit_range
-    number_with_delimiter(@attributes.entity_fly_range.value.to_i) + ' m'
-  rescue StandardError
-    '-'
-  end
-
-  def max_range
-    number_with_delimiter(@attributes.max_range.value.to_i) + ' m'
-  end
-
-  def signature_radius
-    number_with_delimiter(@attributes.signature_radius.value.to_i) + ' m'
-  end
-
-  def prefered_signature
-    number_with_delimiter(@attributes.optimal_sig_radius.value.to_i) + ' m'
-  rescue StandardError
-    '-'
-  end
-
-  def max_locked_targets
-    @attributes.max_locked_targets.value.to_i.to_s
-  rescue StandardError
-    '-'
-  end
-
-  def max_attack_targets
-    @attributes.max_attack_targets.value.to_i.to_s
-  rescue StandardError
-    '-'
-  end
-
-  def ignore_drones
-    @attributes.ai_ignore_drones_below_signature_radius.value.to_i.to_s + ' m'
-  rescue StandardError
-    '-'
+  SIMPLE_PRESENT_HELPERS.each do |method_name|
+    define_method(method_name) do
+      begin
+        @attributes.send(method_name).presented_value
+      rescue StandardError
+        '-'
+      end
+    end
   end
 end

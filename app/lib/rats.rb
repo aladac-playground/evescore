@@ -16,5 +16,15 @@ module Rats
         { icon: row[:name].to_s, title: row[:title], attributes: attributes }
       end
     end
+
+    def repair_value(type)
+      send("entity_#{type}_amount").value / (send("entity_#{type}_duration").value / 1000)
+    rescue StandardError
+      begin
+        send("entity_#{type}_amount_per_second").value
+      rescue StandardError
+        send(:shield_capacity).value / (send(:shield_recharge_rate).value / 1000)
+      end
+    end
   end
 end

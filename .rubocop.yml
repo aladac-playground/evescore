@@ -8,3 +8,4 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
     - 'lib/tasks/*.rake'
+    - 'config/routes.rb'

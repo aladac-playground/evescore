@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  constraints subdomain: %w|rats ratopedia rat| do
+  constraints subdomain: %w[rats ratopedia rat] do
     get '/', to: 'factions#index'
   end
   get 'search', to: 'search#search'

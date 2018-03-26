@@ -1,11 +1,16 @@
 %ol.breadcrumb
-  -if @rat.faction 
-    %li.breadcrumb-item
-      = link_to 'Factions', factions_path
+  %li.breadcrumb-item
+    = link_to 'Factions', factions_path
+  - if @rat.faction 
     %li.breadcrumb-item
       = link_to @rat.faction.name, faction_path(id: @rat.faction_id)
     %li.breadcrumb-item
       = link_to @rat.group.name, group_path(faction_id: @rat.faction_id, group_id: @rat.group_id)
+  - else
+    %li.breadcrumb-item
+      = link_to 'Faction-less groups', factionless_groups_path
+    %li.breadcrumb-item
+      = link_to @rat.group.name, factionless_group_path(group_id: @rat.group_id)
   %li.breadcrumb-item.active= @rat.name
 .panel.panel-default
   .panel-body
@@ -14,7 +19,7 @@
         %table.table.table-condensed
           %caption Description
           %tr
-            %td= @rat.description
+            %td= @rat.description.html_safe
     .row
       .col-sm-3
         %table.table.table-condensed

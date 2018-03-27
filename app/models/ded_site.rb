@@ -4,6 +4,6 @@ class DedSite
   include Mongoid::Document
   field :name, type: String
   field :level, type: String
-  field :boss_id, type: Integer
   belongs_to :faction
+  has_many :bosses, class_name: 'Rat'
 end

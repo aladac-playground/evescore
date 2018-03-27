@@ -3,6 +3,10 @@
 module ApiAttributes
   extend ActiveSupport::Concern
 
+  def types_api
+    ESI::UniverseApi.new.get_universe_types_type_id(id)
+  end
+
   def api_attributes
     types_api.dogma_attributes.map do |attribute|
       dgm = DogmaAttributeType.find(attribute.attribute_id)

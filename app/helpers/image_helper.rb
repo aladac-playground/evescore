@@ -15,10 +15,10 @@ module ImageHelper
     image_tag "https://image.eveonline.com/Character/#{character_id}_#{size}.jpg", options
   end
 
-  def type_image(type_id, size = 32, options = {})
-    ded_boss = DedSite.all.map(&:boss_id).include?(type_id)
+  def type_image(type_id, size = 32, options = { highligh_ded_boss: true })
+    # ded_boss = DedSite.all.map(&:boss_id).include?(type_id) if options[:highligh_ded_boss]
     options[:class] = 'img-rounded cursor-hand'
-    options[:style] = 'border: 1px solid; border-color: red' if ded_boss
+    # options[:style] = 'border: 1px solid; border-color: red' if ded_boss
     image_tag("https://image.eveonline.com/Type/#{type_id}_#{size}.png", options)
   end
 

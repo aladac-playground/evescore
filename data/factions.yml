@@ -1,85 +1,53 @@
 ---
-- :_id: 500001
-  :name: Caldari State
+- :id: 500001
   :corporation_id: 1000035
+  :name: Caldari State
   :pattern: !ruby/regexp /Caldari/i
-- :_id: 500002
-  :name: Minmatar Republic
+- :id: 500002
   :corporation_id: 1000051
+  :name: Minmatar Republic
   :pattern: !ruby/regexp /Minmatar/i
-- :_id: 500003
-  :name: Amarr Empire
+- :id: 500003
   :corporation_id: 1000084
+  :name: Amarr Empire
   :pattern: !ruby/regexp /Amarr/i
-- :_id: 500004
-  :name: Gallente Federation
+- :id: 500004
   :corporation_id: 1000120
-  :pattern: !ruby/regexp /Gallente/i
-- :_id: 500005
-  :name: Jove Empire
-  :corporation_id: 1000149
-  :pattern: !ruby/regexp /Jove/i
-- :_id: 500006
-  :name: CONCORD Assembly
+  :name: Gallente Federation
+  :pattern: !ruby/regexp /(?!gallenteinfested)gallente/i
+- :id: 500006
   :corporation_id: 1000137
+  :name: CONCORD Assembly
   :pattern: !ruby/regexp /CONCORD/i
-- :_id: 500007
-  :name: Ammatar Mandate
-  :corporation_id: 1000123
-  :pattern: !ruby/regexp /Ammatar/i
-- :_id: 500008
-  :name: Khanid Kingdom
+- :id: 500008
   :corporation_id: 1000156
+  :name: Khanid Kingdom
   :pattern: !ruby/regexp /Khanid/i
-- :_id: 500009
-  :name: The Syndicate
-  :corporation_id: 1000146
-  :pattern: 
-- :_id: 500010
-  :name: Guristas Pirates
+- :id: 500010
   :corporation_id: 1000127
+  :name: Guristas Pirates
   :pattern: !ruby/regexp /Guristas/i
-- :_id: 500011
-  :name: Angel Cartel
+- :id: 500011
   :corporation_id: 1000138
+  :name: Angel Cartel
   :pattern: !ruby/regexp /Angel/i
-- :_id: 500012
-  :name: Blood Raider Covenant
+- :id: 500012
   :corporation_id: 1000134
+  :name: Blood Raider Covenant
   :pattern: !ruby/regexp /Blood/i
-- :_id: 500013
-  :name: The InterBus
-  :corporation_id: 1000148
-  :pattern: 
-- :_id: 500014
-  :name: ORE
-  :corporation_id: 1000129
-  :pattern: !ruby/regexp /ORE/i
-- :_id: 500015
-  :name: Thukker Tribe
+- :id: 500015
   :corporation_id: 1000163
+  :name: Thukker Tribe
   :pattern: !ruby/regexp /Thukker/i
-- :_id: 500016
-  :name: Servant Sisters of EVE
-  :corporation_id: 1000130
-  :pattern: !ruby/regexp /Servant/i
-- :_id: 500017
-  :name: The Society of Conscious Thought
-  :corporation_id: 1000131
-  :pattern: 
-- :_id: 500018
-  :name: Mordu's Legion Command
+- :id: 500018
   :corporation_id: 1000128
-  :pattern: !ruby/regexp /Mordu's/i
-- :_id: 500019
-  :name: Sansha's Nation
+  :name: Mordu's Legion Command
+  :pattern: !ruby/regexp /mordu/i
+- :id: 500019
   :corporation_id: 1000162
-  :pattern: !ruby/regexp /Sansha's/i
-- :_id: 500020
-  :name: Serpentis
+  :name: Sansha's Nation
+  :pattern: !ruby/regexp /Sansha/i
+- :id: 500020
   :corporation_id: 1000135
-  :pattern: !ruby/regexp /Serpentis/i
-- :_id: 500024
-  :name: Drifters
-  :corporation_id: 1000274
-  :pattern: 
+  :name: Serpentis
+  :pattern: !ruby/regexp /(?-mix:Serpentis)|(?-mix:Shadow)/

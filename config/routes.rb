@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'factions', to: 'factions#index', as: :factions
   get 'factions/:id', to: 'factions#show', as: :faction
   get 'factions/:faction_id/groups/:group_id', to: 'factions#groups', as: :group
-  get 'groups', to: 'factions#factionless', as: :factionless_groups
-  get 'groups/:group_id', to: 'factions#factionless_group', as: :factionless_group
+  get 'groups', to: 'factions#generic', as: :generic_groups
+  get 'groups/:group_id', to: 'factions#generic_group', as: :generic_group
   get 'factions/groups'
   get 'rats/:id', to: 'rats#show', as: :rats
   get 'rats/:id/details', to: 'rats#details', as: :rats_details

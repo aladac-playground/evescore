@@ -5,6 +5,21 @@
 
 .panel.panel-default
   .panel-body
-    - @groups.each do |group|
-      %p= link_to group.name, group_path(group_id: group.id, faction_id: @faction.id)
+    .row
+      .col-sm-6
+        %table.table.table-condensed
+          %caption Rat Groups
+          - @groups.each do |group|
+            %tr
+              %td
+                = link_to group.name, group_path(group_id: group.id, faction_id: @faction.id)
 
+      .col-sm-6
+        %table.table.table-condensed
+          %caption DED Sites Bosses
+          - @faction.ded_sites.each do |ded|
+            - ded.bosses.each do |boss|
+              %tr
+                %td= link_to boss.name, rats_path(boss.id)
+                %td.numeric= ded_site?(ded)
+              

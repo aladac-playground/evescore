@@ -42,6 +42,10 @@ namespace :import do
   task groups: :environment do
     create_groups
   end
+  desc 'Import Types'
+  task types: :environment do
+    create_types
+  end
 end
 
 def logger
@@ -60,11 +64,17 @@ def import_all
   create_dogma_attribute_types
 end
 
+def create_types
+  Type.delete_all
+  YAML.load_file('data/types.yml').tqdm(leave: true, desc: 'Importing Types').each do |type|
+    Type.create(type)
+  end
+end
+
 def create_groups
   Group.delete_all
-  ESI::UniverseApi.new.get_universe_categories_category_id(11).groups.tqdm.each do |group_id|
-    group = ESI::UniverseApi.new.get_universe_groups_group_id(group_id)
-    Group.create(name: group.name, id: group.group_id)
+  YAML.load_file('data/groups.yml').tqdm(leave: true, desc: 'Importing Groups').each do |type|
+    Group.create(type)
   end
 end
 

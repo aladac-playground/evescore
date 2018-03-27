@@ -1,16 +1,16 @@
 %ol.breadcrumb
   %li.breadcrumb-item
     = link_to 'Factions', factions_path
-  - if @rat.faction 
+  - if @rat.faction && @rat.group.faction
     %li.breadcrumb-item
       = link_to @rat.faction.name, faction_path(id: @rat.faction_id)
     %li.breadcrumb-item
       = link_to @rat.group.name, group_path(faction_id: @rat.faction_id, group_id: @rat.group_id)
   - else
     %li.breadcrumb-item
-      = link_to 'Faction-less groups', factionless_groups_path
+      = link_to 'Generic Groups', generic_groups_path
     %li.breadcrumb-item
-      = link_to @rat.group.name, factionless_group_path(group_id: @rat.group_id)
+      = link_to @rat.group.name, generic_group_path(group_id: @rat.group_id)
   %li.breadcrumb-item.active= @rat.name
 .panel.panel-default
   .panel-body
@@ -26,12 +26,15 @@
           %caption Image & Faction
           %tr
             %td{ rowspan: 2 }
-              = type_image(@rat.id, 64)
+              = type_image(@rat.id, 64, highligh_ded_boss: false)
               = faction_image(@rat.faction_id, 64)
+              = ded_site?(@rat.ded_site)
         %table.table.table-condensed
           %caption Bounty
           %tr
-            %td= entity_kill_bounty
+            %td
+              = icon_tag('isk')
+              = entity_kill_bounty
       .col-sm-9
         %table.table.table-condensed
           %caption Defense
@@ -106,6 +109,21 @@
               = web
               = neut
               = ecm
+    - unless @rat.loot.empty?
+      .row
+        .col-sm-12
+          %table.table.table-condensed
+            %caption 
+              Loot
+            %tr
+              %th
+              %th Item Name
+              %th.numeric Average Price
+            - @rat.loot.sort_by { |l| l.name }.each do |item|
+              %tr
+                %td= type_image(item.id)
+                %td= item.name
+                %td.numeric= item.price ? number_with_precision(item.price, precision: 2, delimiter: ',') + ' ISK' : '-'
         
     .row
       .col-sm-12

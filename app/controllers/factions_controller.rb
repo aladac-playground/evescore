@@ -15,12 +15,12 @@ class FactionsController < ApplicationController
     @rats = Rat.where(group_id: params[:group_id].to_i, faction_id: params[:faction_id].to_i)
   end
 
-  def factionless
+  def generic
     @groups = Group.where(faction_id: nil).sort('name asc')
   end
 
-  def factionless_group
+  def generic_group
     @group = Group.find(params[:group_id].to_i)
-    @rats = @group.rats.where(faction_id: nil).sort('name asc')
+    @rats = @group.rats.sort_by(&:name)
   end
 end

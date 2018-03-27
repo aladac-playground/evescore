@@ -6,9 +6,11 @@ class Rat
   field :name, type: String
   field :bounty, type: Float
   field :faction_name, type: String
+  has_and_belongs_to_many :loot, class_name: 'Loot'
   has_many :kills
   belongs_to :faction, optional: true
   belongs_to :group
+  belongs_to :ded_site, optional: true
 
   before_save :details_from_api, :set_faction
 
@@ -24,10 +26,6 @@ class Rat
                   end
     self.name = rat.name
     self.group = group.group_id
-  end
-
-  def types_api
-    ESI::UniverseApi.new.get_universe_types_type_id(id)
   end
 
   def description

@@ -9,7 +9,7 @@ class Rat
   has_and_belongs_to_many :loot, class_name: 'Loot'
   has_many :kills
   belongs_to :faction, optional: true
-  belongs_to :group
+  belongs_to :group, optional: true
   belongs_to :ded_site, optional: true
 
   before_save :details_from_api, :set_faction

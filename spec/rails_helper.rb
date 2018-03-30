@@ -12,7 +12,7 @@ require 'vcr'
 require 'webmock/rspec'
 require 'database_cleaner'
 
-DatabaseCleaner.strategy = :truncation, { except: %w[dogma_attribute_types] }
+DatabaseCleaner.strategy = :truncation, { except: %w[dogma_attribute_types groups] }
 
 Capybara.javascript_driver = :poltergeist
 

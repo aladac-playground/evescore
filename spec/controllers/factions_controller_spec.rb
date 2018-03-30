@@ -12,7 +12,7 @@ RSpec.describe FactionsController, type: :controller do
 
   describe 'GET #groups' do
     it 'returns http success' do
-      get :groups
+      get :groups, params: { group_id: 495 }
       expect(response).to have_http_status(:success)
     end
   end

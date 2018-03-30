@@ -125,6 +125,7 @@ def create_factions
 end
 
 def create_ded_sites
+  DedSite.delete_all
   ded_sites = YAML.load_file('data/ded_sites.yml')
   ded_sites.tqdm(leave: true, desc: 'Importing DED Sites').each do |ded_site|
     DedSite.create(ded_site)

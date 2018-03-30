@@ -26,6 +26,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 
   describe '#ded_site?' do
     it 'displays DED site info' do
+      create(:rat)
       expect(helper.ded_site?(build(:ded_site))).to eq('&nbsp;<span class="label label-danger cursor-hand" data-toggle="tooltip" data-placement="top" title="The Maze">DED 10/10</span>')
     end
   end

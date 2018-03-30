@@ -5,10 +5,10 @@ require 'rails_helper'
 RSpec.describe WalletRecord, type: :model do
   before(:all) do
     create(:faction)
-    create(:ded_site)
     VCR.use_cassette(:esi, record: :new_episodes) do
       @rat = create(:rat)
     end
+    create(:ded_site)
   end
 
   context '#check_ded_site_id' do
